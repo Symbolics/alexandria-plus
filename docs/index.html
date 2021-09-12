@@ -111,12 +111,13 @@ ul.no-bullet {list-style: none}
   <ul class="no-bullet">
     <li><a id="toc-Exported-definitions-1" href="#Exported-definitions">4.1 Exported definitions</a>
     <ul class="no-bullet">
-      <li><a id="toc-Functions" href="#Exported-functions">4.1.1 Functions</a></li>
+      <li><a id="toc-Macros" href="#Exported-macros">4.1.1 Macros</a></li>
+      <li><a id="toc-Functions" href="#Exported-functions">4.1.2 Functions</a></li>
+      <li><a id="toc-Types" href="#Exported-types">4.1.3 Types</a></li>
     </ul></li>
     <li><a id="toc-Internal-definitions-1" href="#Internal-definitions">4.2 Internal definitions</a>
     <ul class="no-bullet">
       <li><a id="toc-Special-variables" href="#Internal-special-variables">4.2.1 Special variables</a></li>
-      <li><a id="toc-Types" href="#Internal-types">4.2.2 Types</a></li>
     </ul></li>
   </ul></li>
   <li><a id="toc-Indexes-1" href="#Indexes">Appendix A Indexes</a>
@@ -187,16 +188,13 @@ Previous: <a href="#Systems" accesskey="p" rel="prev">Systems</a>, Up: <a href="
 <dd><p>MS-PL
 </p></dd>
 <dt><strong>Description</strong></dt>
-<dd><p>A slightly less conservative version of Alexandria
+<dd><p>A conservative set of extensions to Alexandria utilities.
 </p></dd>
 <dt><strong>Long Description</strong></dt>
-<dd><p>Utilities not in Alexandria.  This library only adds functions that are not in UIOP, OSICAT or Alexandria.
+<dd><p>Utilities not in Alexandria, UIOP or OSICAT.
 </p></dd>
 <dt><strong>Version</strong></dt>
 <dd><p>0.1
-</p></dd>
-<dt><strong>Dependency</strong></dt>
-<dd><p><tt>alexandria</tt>
 </p></dd>
 <dt><strong>Source</strong></dt>
 <dd><p><a href="#go-to-the-alexandria_002b_2024asd-file"><tt>alexandria+.asd</tt></a> (file)
@@ -301,20 +299,19 @@ Previous: <a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file" accesskey="p" 
 </p></dd>
 <dt><strong>Exported Definitions</strong></dt>
 <dd><ul>
-<li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST_002dKEYS-function"><tt>alist-keys</tt></a> (function)
+<li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST-type"><tt>alist</tt></a> (type)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST_002dKEYS-function"><tt>alist-keys</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST_002dVALUES-function"><tt>alist-values</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALISTP-function"><tt>alistp</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236CDR_002dASSOC-function"><tt>cdr-assoc</tt></a> (function)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236DEFPROP-macro"><tt>defprop</tt></a> (macro)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLIST-type"><tt>plist</tt></a> (type)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLISTP-function"><tt>plistp</tt></a> (function)
 </li></ul>
 </dd>
 <dt><strong>Internal Definitions</strong></dt>
-<dd><ul>
-<li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236_002aASSOC_002dTEST_002a-special-variable"><tt>*assoc-test*</tt></a> (special variable)
-</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST-type"><tt>alist</tt></a> (type)
-</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLIST-type"><tt>plist</tt></a> (type)
-</li></ul>
-</dd>
+<dd><p><a href="#go-to-the-ALEXANDRIA_002b_2236_2236_002aASSOC_002dTEST_002a-special-variable"><tt>*assoc-test*</tt></a> (special variable)
+</p></dd>
 </dl>
 
 
@@ -346,27 +343,23 @@ Previous: <a href="#Packages" accesskey="p" rel="prev">Packages</a>, Up: <a href
 <dd><p><a href="#go-to-the-alexandria_002b_002fpkgdcl_2024lisp-file"><tt>pkgdcl.lisp</tt></a> (file)
 </p></dd>
 <dt><strong>Use List</strong></dt>
-<dd><ul>
-<li> <tt>alexandria</tt>
-</li><li> <tt>common-lisp</tt>
-</li></ul>
-</dd>
+<dd><p><tt>common-lisp</tt>
+</p></dd>
 <dt><strong>Exported Definitions</strong></dt>
 <dd><ul>
-<li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST_002dKEYS-function"><tt>alist-keys</tt></a> (function)
+<li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST-type"><tt>alist</tt></a> (type)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST_002dKEYS-function"><tt>alist-keys</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST_002dVALUES-function"><tt>alist-values</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALISTP-function"><tt>alistp</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236CDR_002dASSOC-function"><tt>cdr-assoc</tt></a> (function)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236DEFPROP-macro"><tt>defprop</tt></a> (macro)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLIST-type"><tt>plist</tt></a> (type)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLISTP-function"><tt>plistp</tt></a> (function)
 </li></ul>
 </dd>
 <dt><strong>Internal Definitions</strong></dt>
-<dd><ul>
-<li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236_002aASSOC_002dTEST_002a-special-variable"><tt>*assoc-test*</tt></a> (special variable)
-</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST-type"><tt>alist</tt></a> (type)
-</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLIST-type"><tt>plist</tt></a> (type)
-</li></ul>
-</dd>
+<dd><p><a href="#go-to-the-ALEXANDRIA_002b_2236_2236_002aASSOC_002dTEST_002a-special-variable"><tt>*assoc-test*</tt></a> (special variable)
+</p></dd>
 </dl>
 
 
@@ -395,16 +388,41 @@ Next: <a href="#Internal-definitions" accesskey="n" rel="next">Internal definiti
 </div>
 <span id="Exported-definitions-1"></span><h3 class="section">4.1 Exported definitions</h3>
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Exported-functions" accesskey="1">Exported functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Exported-macros" accesskey="1">Exported macros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Exported-functions" accesskey="2">Exported functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Exported-types" accesskey="3">Exported types</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
 <hr>
+<span id="Exported-macros"></span><div class="header">
+<p>
+Next: <a href="#Exported-functions" accesskey="n" rel="next">Exported functions</a>, Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Macros"></span><h4 class="subsection">4.1.1 Macros</h4>
+<dl>
+<dt id="index-defprop">Macro: <strong>defprop</strong> <em>SYMBOL VALUE INDICATOR</em></dt>
+<dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236DEFPROP-macro"></span><span id="index-Macro_002c-defprop"></span>
+<p>Gives SYMBOL an INDICATOR property of VALUE.<br>
+After this is done (CL:GET symbol indicator) returns VALUE)
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-ALEXANDRIA_002b-package"><tt>alexandria+</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-alexandria_002b_002flists_2024lisp-file"><tt>lists.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
 <span id="Exported-functions"></span><div class="header">
 <p>
-Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Exported-types" accesskey="n" rel="next">Exported types</a>, Previous: <a href="#Exported-macros" accesskey="p" rel="prev">Exported macros</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Functions"></span><h4 class="subsection">4.1.1 Functions</h4>
+<span id="Functions"></span><h4 class="subsection">4.1.2 Functions</h4>
 <dl>
 <dt id="index-alist_002dkeys">Function: <strong>alist-keys</strong> <em>ALIST</em></dt>
 <dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236ALIST_002dKEYS-function"></span><span id="index-Function_002c-alist_002dkeys"></span>
@@ -471,46 +489,12 @@ Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported defi
 </dl>
 </dd></dl>
 
-
 <hr>
-<span id="Internal-definitions"></span><div class="header">
+<span id="Exported-types"></span><div class="header">
 <p>
-Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Definitions" accesskey="u" rel="up">Definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="#Exported-functions" accesskey="p" rel="prev">Exported functions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Internal-definitions-1"></span><h3 class="section">4.2 Internal definitions</h3>
-<table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Internal-special-variables" accesskey="1">Internal special variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Internal-types" accesskey="2">Internal types</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
-</td></tr>
-</table>
-
-<hr>
-<span id="Internal-special-variables"></span><div class="header">
-<p>
-Next: <a href="#Internal-types" accesskey="n" rel="next">Internal types</a>, Previous: <a href="#Internal-definitions" accesskey="p" rel="prev">Internal definitions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
-</div>
-<span id="Special-variables"></span><h4 class="subsection">4.2.1 Special variables</h4>
-<dl>
-<dt id="index-_002aassoc_002dtest_002a">Special Variable: <strong>*assoc-test*</strong></dt>
-<dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236_002aASSOC_002dTEST_002a-special-variable"></span><span id="index-Special-Variable_002c-_002aassoc_002dtest_002a"></span>
-<p>Global equality test for assoc
-</p><dl compact="compact">
-<dt><strong>Package</strong></dt>
-<dd><p><a href="#go-to-the-ALEXANDRIA_002b-package"><tt>alexandria+</tt></a>
-</p></dd>
-<dt><strong>Source</strong></dt>
-<dd><p><a href="#go-to-the-alexandria_002b_002flists_2024lisp-file"><tt>lists.lisp</tt></a> (file)
-</p></dd>
-</dl>
-</dd></dl>
-
-<hr>
-<span id="Internal-types"></span><div class="header">
-<p>
-Previous: <a href="#Internal-special-variables" accesskey="p" rel="prev">Internal special variables</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
-</div>
-<span id="Types"></span><h4 class="subsection">4.2.2 Types</h4>
+<span id="Types"></span><h4 class="subsection">4.1.3 Types</h4>
 <dl>
 <dt id="index-alist">Type: <strong>alist</strong> <em>()</em></dt>
 <dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236ALIST-type"></span><span id="index-Type_002c-alist"></span>
@@ -528,6 +512,38 @@ Previous: <a href="#Internal-special-variables" accesskey="p" rel="prev">Interna
 <dt id="index-plist">Type: <strong>plist</strong> <em>()</em></dt>
 <dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236PLIST-type"></span><span id="index-Type_002c-plist"></span>
 <p>Type designator for PLIST. Implemented as a SATISFIES type, hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-ALEXANDRIA_002b-package"><tt>alexandria+</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-alexandria_002b_002flists_2024lisp-file"><tt>lists.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+
+<hr>
+<span id="Internal-definitions"></span><div class="header">
+<p>
+Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Definitions" accesskey="u" rel="up">Definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Internal-definitions-1"></span><h3 class="section">4.2 Internal definitions</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Internal-special-variables" accesskey="1">Internal special variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<span id="Internal-special-variables"></span><div class="header">
+<p>
+Previous: <a href="#Internal-definitions" accesskey="p" rel="prev">Internal definitions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Special-variables"></span><h4 class="subsection">4.2.1 Special variables</h4>
+<dl>
+<dt id="index-_002aassoc_002dtest_002a">Special Variable: <strong>*assoc-test*</strong></dt>
+<dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236_002aASSOC_002dTEST_002a-special-variable"></span><span id="index-Special-Variable_002c-_002aassoc_002dtest_002a"></span>
+<p>Global equality test for assoc
 </p><dl compact="compact">
 <dt><strong>Package</strong></dt>
 <dd><p><a href="#go-to-the-ALEXANDRIA_002b-package"><tt>alexandria+</tt></a>
@@ -610,7 +626,11 @@ Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Pre
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-C"><b>C</b></a>
  &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-D"><b>D</b></a>
+ &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-P"><b>P</b></a>
  &nbsp; 
@@ -626,12 +646,18 @@ Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Pre
 <tr><th id="Function-index_fn_letter-C">C</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-cdr_002dassoc"><code>cdr-assoc</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-D">D</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-defprop"><code>defprop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-macros">Exported macros</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-F">F</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-alist_002dkeys"><code><span class="roman">Function, </span>alist-keys</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-alist_002dvalues"><code><span class="roman">Function, </span>alist-values</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-alistp"><code><span class="roman">Function, </span>alistp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-cdr_002dassoc"><code><span class="roman">Function, </span>cdr-assoc</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-plistp"><code><span class="roman">Function, </span>plistp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-M">M</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Macro_002c-defprop"><code><span class="roman">Macro, </span>defprop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-macros">Exported macros</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-plistp"><code>plistp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
@@ -641,7 +667,11 @@ Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Pre
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-C"><b>C</b></a>
  &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-D"><b>D</b></a>
+ &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-P"><b>P</b></a>
  &nbsp; 
@@ -701,18 +731,18 @@ Previous: <a href="#Variable-index" accesskey="p" rel="prev">Variable index</a>,
 <tr><th id="Data-type-index_tp_letter-A">A</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-alexandria_002b"><code>alexandria+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b-system">The alexandria+ system</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-alexandria_002b-1"><code>alexandria+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b-package">The alexandria+ package</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-alist"><code>alist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-types">Internal types</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-alist"><code>alist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Package_002c-alexandria_002b"><code><span class="roman">Package, </span>alexandria+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b-package">The alexandria+ package</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-plist"><code>plist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-types">Internal types</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-plist"><code>plist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-S">S</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-System_002c-alexandria_002b"><code><span class="roman">System, </span>alexandria+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b-system">The alexandria+ system</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-T">T</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Type_002c-alist"><code><span class="roman">Type, </span>alist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-types">Internal types</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Type_002c-plist"><code><span class="roman">Type, </span>plist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-types">Internal types</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Type_002c-alist"><code><span class="roman">Type, </span>alist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Type_002c-plist"><code><span class="roman">Type, </span>plist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-type-index_tp_letter-A"><b>A</b></a>

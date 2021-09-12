@@ -11,7 +11,7 @@
 @c Commentary:
 
 @c Generated automatically by Declt version 2.4 patchlevel 1 "Will Decker"
-@c on Thu Sep 02 13:15:33 2021 GMT+8.
+@c on Sun Sep 12 13:54:25 2021 GMT+8.
 
 
 @c ====================================================================
@@ -272,7 +272,7 @@ The Alexandria+ Reference Manual, version 0.1.
 @c ====================================================================
 @titlepage
 @title The Alexandria+ Reference Manual
-@subtitle A slightly less conservative version of Alexandria, version 0.1
+@subtitle A conservative set of extensions to Alexandria utilities, version 0.1
 
 @author Steven Nunez <@email{steve@atchar{}symbolics.tech}>
 
@@ -333,13 +333,11 @@ Steven Nunez <@email{steve@atchar{}symbolics.tech}>
 @item License
 MS-PL
 @item Description
-A slightly less conservative version of Alexandria
+A conservative set of extensions to Alexandria utilities.
 @item Long Description
-Utilities not in Alexandria.  This library only adds functions that are not in UIOP@comma{} OSICAT or Alexandria.
+Utilities not in Alexandria@comma{} UIOP or OSICAT.
 @item Version
 0.1
-@item Dependency
-@t{alexandria}
 @item Source
 @ref{go to the alexandria+․asd file, , @t{alexandria+.asd}} (file)
 @item Directory
@@ -415,6 +413,8 @@ components trees.
 @item Exported Definitions
 @itemize @bullet
 @item
+@ref{go to the ALEXANDRIA+∶∶ALIST type, , @t{alist}} (type)
+@item
 @ref{go to the ALEXANDRIA+∶∶ALIST-KEYS function, , @t{alist-keys}} (function)
 @item
 @ref{go to the ALEXANDRIA+∶∶ALIST-VALUES function, , @t{alist-values}} (function)
@@ -423,17 +423,14 @@ components trees.
 @item
 @ref{go to the ALEXANDRIA+∶∶CDR-ASSOC function, , @t{cdr-assoc}} (function)
 @item
+@ref{go to the ALEXANDRIA+∶∶DEFPROP macro, , @t{defprop}} (macro)
+@item
+@ref{go to the ALEXANDRIA+∶∶PLIST type, , @t{plist}} (type)
+@item
 @ref{go to the ALEXANDRIA+∶∶PLISTP function, , @t{plistp}} (function)
 @end itemize
 @item Internal Definitions
-@itemize @bullet
-@item
 @ref{go to the ALEXANDRIA+∶∶*ASSOC-TEST* special variable, , @t{*assoc-test*}} (special variable)
-@item
-@ref{go to the ALEXANDRIA+∶∶ALIST type, , @t{alist}} (type)
-@item
-@ref{go to the ALEXANDRIA+∶∶PLIST type, , @t{plist}} (type)
-@end itemize
 @end table
 
 
@@ -461,14 +458,11 @@ Packages are listed by definition order.
 @item Source
 @ref{go to the alexandria+/pkgdcl․lisp file, , @t{pkgdcl.lisp}} (file)
 @item Use List
-@itemize @bullet
-@item
-@t{alexandria}
-@item
 @t{common-lisp}
-@end itemize
 @item Exported Definitions
 @itemize @bullet
+@item
+@ref{go to the ALEXANDRIA+∶∶ALIST type, , @t{alist}} (type)
 @item
 @ref{go to the ALEXANDRIA+∶∶ALIST-KEYS function, , @t{alist-keys}} (function)
 @item
@@ -478,17 +472,14 @@ Packages are listed by definition order.
 @item
 @ref{go to the ALEXANDRIA+∶∶CDR-ASSOC function, , @t{cdr-assoc}} (function)
 @item
+@ref{go to the ALEXANDRIA+∶∶DEFPROP macro, , @t{defprop}} (macro)
+@item
+@ref{go to the ALEXANDRIA+∶∶PLIST type, , @t{plist}} (type)
+@item
 @ref{go to the ALEXANDRIA+∶∶PLISTP function, , @t{plistp}} (function)
 @end itemize
 @item Internal Definitions
-@itemize @bullet
-@item
 @ref{go to the ALEXANDRIA+∶∶*ASSOC-TEST* special variable, , @t{*assoc-test*}} (special variable)
-@item
-@ref{go to the ALEXANDRIA+∶∶ALIST type, , @t{alist}} (type)
-@item
-@ref{go to the ALEXANDRIA+∶∶PLIST type, , @t{plist}} (type)
-@end itemize
 @end table
 
 
@@ -513,10 +504,27 @@ lexicographic order.
 @node Exported definitions, Internal definitions, Definitions, Definitions
 @section Exported definitions
 @menu
+* Exported macros::
 * Exported functions::
+* Exported types::
 @end menu
 
-@node Exported functions, , Exported definitions, Exported definitions
+@node Exported macros, Exported functions, Exported definitions, Exported definitions
+@subsection Macros
+@deffn {Macro} {defprop} SYMBOL VALUE INDICATOR
+@anchor{go to the ALEXANDRIA+∶∶DEFPROP macro}@c
+@macrosubindex{defprop}@c
+Gives SYMBOL an INDICATOR property of VALUE.@*
+After this is done (CL:GET symbol indicator) returns VALUE)
+@table @strong
+@item Package
+@ref{go to the ALEXANDRIA+ package, , @t{alexandria+}}
+@item Source
+@ref{go to the alexandria+/lists․lisp file, , @t{lists.lisp}} (file)
+@end table
+@end deffn
+
+@node Exported functions, Exported types, Exported macros, Exported definitions
 @subsection Functions
 @deffn {Function} {alist-keys} ALIST
 @anchor{go to the ALEXANDRIA+∶∶ALIST-KEYS function}@c
@@ -574,32 +582,7 @@ Returns VALUE if it is a properly formed PLIST@comma{} NIL otherwise.
 @end table
 @end deffn
 
-
-@c --------------------
-@c Internal definitions
-@c --------------------
-@node Internal definitions, , Exported definitions, Definitions
-@section Internal definitions
-@menu
-* Internal special variables::
-* Internal types::
-@end menu
-
-@node Internal special variables, Internal types, Internal definitions, Internal definitions
-@subsection Special variables
-@defvr {Special Variable} *assoc-test*
-@anchor{go to the ALEXANDRIA+∶∶*ASSOC-TEST* special variable}@c
-@specialsubindex{*assoc-test*}@c
-Global equality test for assoc
-@table @strong
-@item Package
-@ref{go to the ALEXANDRIA+ package, , @t{alexandria+}}
-@item Source
-@ref{go to the alexandria+/lists․lisp file, , @t{lists.lisp}} (file)
-@end table
-@end defvr
-
-@node Internal types, , Internal special variables, Internal definitions
+@node Exported types, , Exported functions, Exported definitions
 @subsection Types
 @deftp {Type} {alist} ()
 @anchor{go to the ALEXANDRIA+∶∶ALIST type}@c
@@ -623,6 +606,30 @@ Type designator for PLIST. Implemented as a SATISFIES type@comma{} hence not rec
 @ref{go to the alexandria+/lists․lisp file, , @t{lists.lisp}} (file)
 @end table
 @end deftp
+
+
+@c --------------------
+@c Internal definitions
+@c --------------------
+@node Internal definitions, , Exported definitions, Definitions
+@section Internal definitions
+@menu
+* Internal special variables::
+@end menu
+
+@node Internal special variables, , Internal definitions, Internal definitions
+@subsection Special variables
+@defvr {Special Variable} *assoc-test*
+@anchor{go to the ALEXANDRIA+∶∶*ASSOC-TEST* special variable}@c
+@specialsubindex{*assoc-test*}@c
+Global equality test for assoc
+@table @strong
+@item Package
+@ref{go to the ALEXANDRIA+ package, , @t{alexandria+}}
+@item Source
+@ref{go to the alexandria+/lists․lisp file, , @t{lists.lisp}} (file)
+@end table
+@end defvr
 
 
 
