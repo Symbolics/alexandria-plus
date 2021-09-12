@@ -13,21 +13,21 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <!-- <a href="https://github.com/Symbolics/alexandria+"> -->
+  <!-- <a href="https://github.com/Symbolics/alexandria-plus"> -->
   <!--   <img src="https://lisp-stat.dev/images/stats-image.svg" alt="Logo" width="80" height="80"> -->
   <!-- </a> -->
 
   <h3 align="center">Alexandria+</h3>
 
   <p align="center">
-Alexandria+ is a slightly less conservative set of utilities, similar in spirit to [alexandria](https://gitlab.common-lisp.net/alexandria/alexandria). It is intended to be used alongside `alexandria`, e.g. `(:use :alexandria :alexandria+)`
+Alexandria+ is a slightly less conservative set of utilities, similar in spirit to <a href="https://gitlab.common-lisp.net/alexandria/alexandria" alexandria.
 	<br />
-    <a href="https://Symbolics.github.io/alexandria+"><strong>Explore the docs »</strong></a>
+    <a href="https://Symbolics.github.io/alexandria-plus"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Symbolics/alexandria+/issues">Report Bug</a>
+    <a href="https://github.com/Symbolics/alexandria-plus/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Symbolics/alexandria+/issues">Request Feature</a>
+    <a href="https://github.com/Symbolics/alexandria-plus/issues">Request Feature</a>
     ·
     <a href="https://lisp-stat.github.io/data-frame/">Reference Manual</a>
   </p>
@@ -105,7 +105,7 @@ To get a local copy up and running follow these steps:
 ### Prerequisites
 
 An ANSI Common Lisp implementation. Developed and tested with
-[SBCL](https://www.sbcl.org/) and
+[SBCL](https://www.sbcl.org/), Genera and
 [CCL](https://github.com/Clozure/ccl).
 
 ### Quicklisp Installation
@@ -119,7 +119,7 @@ An ANSI Common Lisp implementation. Developed and tested with
 1. Clone the repository
    ```sh
    cd ~/quicklisp/local-projects &&
-   git clone https://github.com/Symbolics/alexandria+.git
+   git clone https://github.com/Symbolics/alexandria-plus.git
    ```
 2. Reset the ASDF source-registry to find the new system (from the REPL)
    ```lisp
@@ -133,15 +133,15 @@ An ANSI Common Lisp implementation. Developed and tested with
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The `alexandria+` source code is organised the same as the `alexandria` source. For example the alist and plist utilities are in the `lists.lisp` file in both `alexandria` and `alexandria+`.
+The `alexandria+` source code is organised the same as the `alexandria` source. For example the alist and plist utilities are in `lists.lisp` in both `alexandria` and `alexandria+`.  It is intended to be used alongside `alexandria`, e.g. `(:use :alexandria :alexandria+)`
 
-For more examples, please refer to the [Documentation](https://Symbolics.github.io/alexandria+).
+For more examples, please refer to the [Documentation](https://Symbolics.github.io/alexandria-plus).
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/Symbolics/alexandria+/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Symbolics/alexandria-plus/issues) for a list of proposed features (and known issues).
 
 ## Resources
 
@@ -161,21 +161,21 @@ Distributed under the MS-PL License. See [LICENSE](LICENSE) for more information
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/Symbolics/alexandria+](https://github.com/Symbolics/alexandria+)
+Project Link: [https://github.com/Symbolics/alexandria-plus](https://github.com/Symbolics/alexandria-plus)
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Symbolics/alexandria+.svg?style=for-the-badge
-[contributors-url]: https://github.com/Symbolics/alexandria+/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Symbolics/alexandria+.svg?style=for-the-badge
-[forks-url]: https://github.com/Symbolics/alexandria+/network/members
-[stars-shield]: https://img.shields.io/github/stars/Symbolics/alexandria+.svg?style=for-the-badge
-[stars-url]: https://github.com/Symbolics/alexandria+/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Symbolics/alexandria+.svg?style=for-the-badge
-[issues-url]: https://github.com/Symbolics/alexandria+/issues
-[license-shield]: https://img.shields.io/github/license/Symbolics/alexandria+.svg?style=for-the-badge
-[license-url]: https://github.com/Symbolics/alexandria+/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/Symbolics/alexandria-plus.svg?style=for-the-badge
+[contributors-url]: https://github.com/Symbolics/alexandria-plus/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Symbolics/alexandria-plus.svg?style=for-the-badge
+[forks-url]: https://github.com/Symbolics/alexandria-plus/network/members
+[stars-shield]: https://img.shields.io/github/stars/Symbolics/alexandria-plus.svg?style=for-the-badge
+[stars-url]: https://github.com/Symbolics/alexandria-plus/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Symbolics/alexandria-plus.svg?style=for-the-badge
+[issues-url]: https://github.com/Symbolics/alexandria-plus/issues
+[license-shield]: https://img.shields.io/github/license/Symbolics/alexandria-plus.svg?style=for-the-badge
+[license-url]: https://github.com/Symbolics/alexandria-plus/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/company/Symbolics/
