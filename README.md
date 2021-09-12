@@ -20,7 +20,7 @@
   <h3 align="center">Alexandria+</h3>
 
   <p align="center">
-Alexandria+ is a slightly less conservative set of utilities, similar in spirit to <a href="https://gitlab.common-lisp.net/alexandria/alexandria" alexandria.
+Alexandria+ is a slightly less conservative set of utilities, similar in spirit to <a href="https://gitlab.common-lisp.net/alexandria/alexandria">alexandria</a>.
 	<br />
     <a href="https://Symbolics.github.io/alexandria-plus"><strong>Explore the docs »</strong></a>
     <br />
