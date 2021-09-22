@@ -8,8 +8,10 @@
   :homepage "https://github.com/symbolics/alexandria+"
   :license :MS-PL
   :version (:read-file-form "version.sexp")
+  :depends-on ("alexandria")
   :components ((:file "pkgdcl")
-	       (:file "lists"))
+	       (:file "lists")
+	       (:file "types"))
   :in-order-to ((test-op (test-op :alexandria+/tests))))
 
 (defsystem "alexandria+/tests"

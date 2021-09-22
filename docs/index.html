@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>The Alexandria+ Reference Manual</title>
 
-<meta name="description" content="The Alexandria+ Reference Manual, version 0.1.">
+<meta name="description" content="The Alexandria+ Reference Manual, version 1.1.">
 <meta name="keywords" content="The Alexandria+ Reference Manual">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
@@ -101,6 +101,7 @@ ul.no-bullet {list-style: none}
       <li><a id="toc-alexandria_002b_002easd" href="#The-alexandria_002b_2024asd-file">2.1.1 <tt>alexandria+.asd</tt></a></li>
       <li><a id="toc-alexandria_002b_002fpkgdcl_002elisp" href="#The-alexandria_002b_002fpkgdcl_2024lisp-file">2.1.2 <tt>alexandria+/pkgdcl.lisp</tt></a></li>
       <li><a id="toc-alexandria_002b_002flists_002elisp" href="#The-alexandria_002b_002flists_2024lisp-file">2.1.3 <tt>alexandria+/lists.lisp</tt></a></li>
+      <li><a id="toc-alexandria_002b_002ftypes_002elisp" href="#The-alexandria_002b_002ftypes_2024lisp-file">2.1.4 <tt>alexandria+/types.lisp</tt></a></li>
     </ul></li>
   </ul></li>
   <li><a id="toc-Packages-1" href="#Packages">3 Packages</a>
@@ -138,7 +139,7 @@ ul.no-bullet {list-style: none}
 Next: <a href="#Systems" accesskey="n" rel="next">Systems</a>, Previous: <a href="dir.html#Top" accesskey="p" rel="prev">(dir)</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <span id="The-Alexandria_002b-Reference-Manual"></span><h1 class="top">The Alexandria+ Reference Manual</h1>
-<p>This is the Alexandria+ Reference Manual, version 0.1.
+<p>This is the Alexandria+ Reference Manual, version 1.1.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Systems" accesskey="1">Systems</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The systems documentation
@@ -194,7 +195,10 @@ Previous: <a href="#Systems" accesskey="p" rel="prev">Systems</a>, Up: <a href="
 <dd><p>Utilities not in Alexandria, UIOP or OSICAT.
 </p></dd>
 <dt><strong>Version</strong></dt>
-<dd><p>0.1
+<dd><p>1.1
+</p></dd>
+<dt><strong>Dependency</strong></dt>
+<dd><p><tt>alexandria</tt>
 </p></dd>
 <dt><strong>Source</strong></dt>
 <dd><p><a href="#go-to-the-alexandria_002b_2024asd-file"><tt>alexandria+.asd</tt></a> (file)
@@ -206,6 +210,7 @@ Previous: <a href="#Systems" accesskey="p" rel="prev">Systems</a>, Up: <a href="
 <dd><ul>
 <li> <a href="#go-to-the-alexandria_002b_002fpkgdcl_2024lisp-file"><tt>pkgdcl.lisp</tt></a> (file)
 </li><li> <a href="#go-to-the-alexandria_002b_002flists_2024lisp-file"><tt>lists.lisp</tt></a> (file)
+</li><li> <a href="#go-to-the-alexandria_002b_002ftypes_2024lisp-file"><tt>types.lisp</tt></a> (file)
 </li></ul>
 </dd>
 </dl>
@@ -239,6 +244,8 @@ Previous: <a href="#Files" accesskey="p" rel="prev">Files</a>, Up: <a href="#Fil
 <tr><td align="left" valign="top">&bull; <a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file" accesskey="2">The alexandria+/pkgdcl.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#The-alexandria_002b_002flists_2024lisp-file" accesskey="3">The alexandria+/lists.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-alexandria_002b_002ftypes_2024lisp-file" accesskey="4">The alexandria+/types.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
@@ -284,7 +291,7 @@ Next: <a href="#The-alexandria_002b_002flists_2024lisp-file" accesskey="n" rel="
 <hr>
 <span id="The-alexandria_002b_002flists_2024lisp-file"></span><div class="header">
 <p>
-Previous: <a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file" accesskey="p" rel="prev">The alexandria+/pkgdcl․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#The-alexandria_002b_002ftypes_2024lisp-file" accesskey="n" rel="next">The alexandria+/types․lisp file</a>, Previous: <a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file" accesskey="p" rel="prev">The alexandria+/pkgdcl․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <span id="alexandria_002b_002flists_002elisp"></span><h4 class="subsection">2.1.3 <tt>alexandria+/lists.lisp</tt></h4>
 <span id="go-to-the-alexandria_002b_002flists_2024lisp-file"></span><span id="index-alexandria_002b_002flists_002elisp"></span>
@@ -312,6 +319,30 @@ Previous: <a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file" accesskey="p" 
 <dt><strong>Internal Definitions</strong></dt>
 <dd><p><a href="#go-to-the-ALEXANDRIA_002b_2236_2236_002aASSOC_002dTEST_002a-special-variable"><tt>*assoc-test*</tt></a> (special variable)
 </p></dd>
+</dl>
+
+<hr>
+<span id="The-alexandria_002b_002ftypes_2024lisp-file"></span><div class="header">
+<p>
+Previous: <a href="#The-alexandria_002b_002flists_2024lisp-file" accesskey="p" rel="prev">The alexandria+/lists․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="alexandria_002b_002ftypes_002elisp"></span><h4 class="subsection">2.1.4 <tt>alexandria+/types.lisp</tt></h4>
+<span id="go-to-the-alexandria_002b_002ftypes_2024lisp-file"></span><span id="index-alexandria_002b_002ftypes_002elisp"></span>
+<span id="index-Lisp-File_002c-alexandria_002b_002ftypes_002elisp"></span>
+<span id="index-File_002c-Lisp_002c-alexandria_002b_002ftypes_002elisp"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-alexandria_002b-system"><tt>alexandria+</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/alexandria+/types.lisp"><tt>types.lisp</tt></a>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PERCENTAGE-type"><tt>percentage</tt></a> (type)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PROBABILITY-type"><tt>probability</tt></a> (type)
+</li></ul>
+</dd>
 </dl>
 
 
@@ -345,6 +376,9 @@ Previous: <a href="#Packages" accesskey="p" rel="prev">Packages</a>, Up: <a href
 <dt><strong>Use List</strong></dt>
 <dd><p><tt>common-lisp</tt>
 </p></dd>
+<dt><strong>Used By List</strong></dt>
+<dd><p><tt>alexandria+/tests</tt>
+</p></dd>
 <dt><strong>Exported Definitions</strong></dt>
 <dd><ul>
 <li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALIST-type"><tt>alist</tt></a> (type)
@@ -353,8 +387,10 @@ Previous: <a href="#Packages" accesskey="p" rel="prev">Packages</a>, Up: <a href
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236ALISTP-function"><tt>alistp</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236CDR_002dASSOC-function"><tt>cdr-assoc</tt></a> (function)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236DEFPROP-macro"><tt>defprop</tt></a> (macro)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PERCENTAGE-type"><tt>percentage</tt></a> (type)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLIST-type"><tt>plist</tt></a> (type)
 </li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PLISTP-function"><tt>plistp</tt></a> (function)
+</li><li> <a href="#go-to-the-ALEXANDRIA_002b_2236_2236PROBABILITY-type"><tt>probability</tt></a> (type)
 </li></ul>
 </dd>
 <dt><strong>Internal Definitions</strong></dt>
@@ -406,7 +442,7 @@ Next: <a href="#Exported-functions" accesskey="n" rel="next">Exported functions<
 <dt id="index-defprop">Macro: <strong>defprop</strong> <em>SYMBOL VALUE INDICATOR</em></dt>
 <dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236DEFPROP-macro"></span><span id="index-Macro_002c-defprop"></span>
 <p>Gives SYMBOL an INDICATOR property of VALUE.<br>
-After this is done (CL:GET symbol indicator) returns VALUE)
+After this is done (CL:GET symbol indicator) returns VALUE
 </p><dl compact="compact">
 <dt><strong>Package</strong></dt>
 <dd><p><a href="#go-to-the-ALEXANDRIA_002b-package"><tt>alexandria+</tt></a>
@@ -509,6 +545,19 @@ Previous: <a href="#Exported-functions" accesskey="p" rel="prev">Exported functi
 </dl>
 </dd></dl>
 <dl>
+<dt id="index-percentage">Type: <strong>percentage</strong> <em>()</em></dt>
+<dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236PERCENTAGE-type"></span><span id="index-Type_002c-percentage"></span>
+<p>A number between 0 and 100
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-ALEXANDRIA_002b-package"><tt>alexandria+</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-alexandria_002b_002ftypes_2024lisp-file"><tt>types.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
 <dt id="index-plist">Type: <strong>plist</strong> <em>()</em></dt>
 <dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236PLIST-type"></span><span id="index-Type_002c-plist"></span>
 <p>Type designator for PLIST. Implemented as a SATISFIES type, hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
@@ -518,6 +567,19 @@ Previous: <a href="#Exported-functions" accesskey="p" rel="prev">Exported functi
 </p></dd>
 <dt><strong>Source</strong></dt>
 <dd><p><a href="#go-to-the-alexandria_002b_002flists_2024lisp-file"><tt>lists.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-probability">Type: <strong>probability</strong> <em>()</em></dt>
+<dd><span id="go-to-the-ALEXANDRIA_002b_2236_2236PROBABILITY-type"></span><span id="index-Type_002c-probability"></span>
+<p>A number between 0 and 1
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-ALEXANDRIA_002b-package"><tt>alexandria+</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-alexandria_002b_002ftypes_2024lisp-file"><tt>types.lisp</tt></a> (file)
 </p></dd>
 </dl>
 </dd></dl>
@@ -594,16 +656,19 @@ Next: <a href="#Function-index" accesskey="n" rel="next">Function index</a>, Pre
 <tr><td></td><td valign="top"><a href="#index-alexandria_002b_002easd"><tt>alexandria+.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_2024asd-file">The alexandria+․asd file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-alexandria_002b_002flists_002elisp"><tt>alexandria+/lists.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002flists_2024lisp-file">The alexandria+/lists․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-alexandria_002b_002fpkgdcl_002elisp"><tt>alexandria+/pkgdcl.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file">The alexandria+/pkgdcl․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-alexandria_002b_002ftypes_002elisp"><tt>alexandria+/types.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002ftypes_2024lisp-file">The alexandria+/types․lisp file</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Concept-index_cp_letter-F">F</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-alexandria_002b_002easd">File, Lisp, <tt>alexandria+.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_2024asd-file">The alexandria+․asd file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-alexandria_002b_002flists_002elisp">File, Lisp, <tt>alexandria+/lists.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002flists_2024lisp-file">The alexandria+/lists․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-alexandria_002b_002fpkgdcl_002elisp">File, Lisp, <tt>alexandria+/pkgdcl.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file">The alexandria+/pkgdcl․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-alexandria_002b_002ftypes_002elisp">File, Lisp, <tt>alexandria+/types.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002ftypes_2024lisp-file">The alexandria+/types․lisp file</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Concept-index_cp_letter-L">L</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-alexandria_002b_002easd">Lisp File, <tt>alexandria+.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_2024asd-file">The alexandria+․asd file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-alexandria_002b_002flists_002elisp">Lisp File, <tt>alexandria+/lists.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002flists_2024lisp-file">The alexandria+/lists․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-alexandria_002b_002fpkgdcl_002elisp">Lisp File, <tt>alexandria+/pkgdcl.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file">The alexandria+/pkgdcl․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-alexandria_002b_002ftypes_002elisp">Lisp File, <tt>alexandria+/types.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002ftypes_2024lisp-file">The alexandria+/types․lisp file</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_letter-A"><b>A</b></a>
@@ -735,14 +800,18 @@ Previous: <a href="#Variable-index" accesskey="p" rel="prev">Variable index</a>,
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Package_002c-alexandria_002b"><code><span class="roman">Package, </span>alexandria+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b-package">The alexandria+ package</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-percentage"><code>percentage</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-plist"><code>plist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-probability"><code>probability</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-S">S</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-System_002c-alexandria_002b"><code><span class="roman">System, </span>alexandria+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b-system">The alexandria+ system</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-T">T</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Type_002c-alist"><code><span class="roman">Type, </span>alist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Type_002c-percentage"><code><span class="roman">Type, </span>percentage</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Type_002c-plist"><code><span class="roman">Type, </span>plist</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Type_002c-probability"><code><span class="roman">Type, </span>probability</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-types">Exported types</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-type-index_tp_letter-A"><b>A</b></a>

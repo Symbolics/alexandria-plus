@@ -58,7 +58,7 @@
 
 (defmacro defprop (symbol value indicator)
   "Gives SYMBOL an INDICATOR property of VALUE.
-After this is done (CL:GET symbol indicator) returns VALUE)"
+After this is done (CL:GET symbol indicator) returns VALUE"
   (when (not (symbolp symbol))
     (error "~S is not a symbol" symbol))
   `(setf (get ',symbol ',indicator) ',value))

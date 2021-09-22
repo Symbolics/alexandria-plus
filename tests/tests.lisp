@@ -1,4 +1,4 @@
-;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: CL-USER -*-
+;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ALEXANDRIA/TESTS -*-
 ;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
 
 (in-package :alexandria+/tests)
@@ -36,8 +36,7 @@
   (fail (cdr-assoc nil 1))
   (is equal nil (cdr-assoc :foo ()))
   (is equal nil (cdr-assoc nil '(("foo" . "bar"))))
-  (is equal "bar" (cdr-assoc "foo" '(("foo" . "bar"))))
-  )
+  (is equal "bar" (cdr-assoc "foo" '(("foo" . "bar")))))
 
 (define-test alist-keys
   :parent alist
@@ -70,3 +69,24 @@
     (is equal 'hk (get 'test-prop 'pistol))))
 
 
+
+;;; types
+
+(define-test types
+  :parent all)
+
+(define-test probability
+  :parent types
+  (true (typep 0.1 'probability))
+  (true (typep 0 'probability))
+  (true (typep 1 'probability))
+  (false (typep 1.1 'probability))
+  (false (typep -1 'probability)))
+
+(define-test percentage
+  :parent types
+  (true (typep 97 'percentage))
+  (true (typep 0 'percentage))
+  (true (typep 100 'percentage))
+  (false (typep 101 'percentage))
+  (false (typep -1 'percentage)))

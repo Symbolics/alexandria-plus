@@ -10,4 +10,10 @@
 	   #:alist-keys
 	   #:alist-values
 	   #:cdr-assoc
+
+	   ;; Types
+	   #:probability
+	   #:percentage
+
+	   ;; Utilities
 	   #:defprop))

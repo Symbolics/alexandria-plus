@@ -66,7 +66,7 @@ Alexandria+ is a slightly less conservative set of utilities, similar in spirit 
 <!-- ABOUT THE PROJECT -->
 ## About the Project
 
-We generally follow the three guiding principles of Alexandria:
+We generally follow two of the three guiding principles of Alexandria:
 
  * Utilities, not extensions: Alexandria will not contain conceptual
    extensions to Common Lisp, instead limiting itself to tools and
@@ -80,17 +80,23 @@ We generally follow the three guiding principles of Alexandria:
    consider conservative utilities. Alexandria does not and will not
    include anaphoric constructs, loop-like binding macros, etc.
 
- * Portable: Alexandria limits itself to portable parts of Common
+ * ~~Portable: Alexandria limits itself to portable parts of Common
    Lisp. Even apparently conservative and useful functions remain
    outside the scope of Alexandria if they cannot be implemented
    portably. Portability is here defined as portable within a
    conforming implementation: implementation bugs are not considered
-   portability issues.
+   portability issues.~~
+
+Manpower does not permit testing on all Lisp implementations, so we target Genera, SBCL and CCL.
 
 
-An additional guiding principal is that we only add functionality that is not already available in `UIOP`, `OSICAT` or `alexandria`, but required for multiple projects that we work on. Although portable code is desirable, it is not tested on anything except SBCL, CCL and Genera.
+An additional guiding principal is that we only add functionality that is not already available in `UIOP`, `OSICAT` or `alexandria`, but required for multiple projects that we work on.
 
-Another library, with much more functionality, is [serapeum](https://github.com/ruricolist/serapeum).  Sadly it is not split into separate ASDF systems, so you need to haul in all 400+ symbols to use it. If that's OK with you, it may be a better choice.
+Other utilities libraries include:
+
+- [quickutil](http://quickutil.org/)
+- [rutils](https://github.com/vseloved/rutils)
+- [serapeum](https://github.com/ruricolist/serapeum)
 
 
 ### Built With
@@ -105,16 +111,9 @@ To get a local copy up and running follow these steps:
 ### Prerequisites
 
 An ANSI Common Lisp implementation. Developed and tested with
-[SBCL](https://www.sbcl.org/), Genera and
-[CCL](https://github.com/Clozure/ccl).
+[SBCL](https://www.sbcl.org/), Genera and [CCL](https://github.com/Clozure/ccl).
 
-### Quicklisp Installation
-
-```lisp
-(ql:quickload :alexandria+)
-```
-
-### Manual Installation
+### Github
 
 1. Clone the repository
    ```sh
@@ -127,8 +126,15 @@ An ANSI Common Lisp implementation. Developed and tested with
    ```
 3. Load the system
    ```lisp
-   (ql:quickload :alexandria+)
+   (asdf:load-system :alexandria+)
    ```
+
+### Quicklisp
+
+```lisp
+(ql:quickload :alexandria+)
+```
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
