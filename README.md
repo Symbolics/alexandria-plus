@@ -115,9 +115,11 @@ An ANSI Common Lisp implementation. Developed and tested with
 
 ### Github
 
+To make the system accessible to [ASDF](https://common-lisp.net/project/asdf/) (a build facility, similar to `make` in the C world), clone the repository in a directory it knows about.  By default the `common-lisp` directory in your home directory is known. Create this if it doesn't already exist and then:
+
 1. Clone the repository
    ```sh
-   cd ~/quicklisp/local-projects &&
+   cd ~/common-lisp/ &&
    git clone https://github.com/Symbolics/alexandria-plus.git
    ```
 2. Reset the ASDF source-registry to find the new system (from the REPL)
@@ -128,13 +130,6 @@ An ANSI Common Lisp implementation. Developed and tested with
    ```lisp
    (asdf:load-system :alexandria+)
    ```
-
-### Quicklisp
-
-```lisp
-(ql:quickload :alexandria+)
-```
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage

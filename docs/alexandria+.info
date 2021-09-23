@@ -182,8 +182,6 @@ File: alexandria+.info,  Node: The alexandria+ package,  Prev: Packages,  Up: Pa
      *note pkgdcl.lisp: go to the alexandria+/pkgdcl․lisp file. (file)
 *Use List*
      common-lisp
-*Used By List*
-     alexandria+/tests
 *Exported Definitions*
         • *note alist: go to the ALEXANDRIA+∶∶ALIST type. (type)
         • *note alist-keys: go to the ALEXANDRIA+∶∶ALIST-KEYS function.
@@ -481,29 +479,29 @@ Ref: go to the alexandria+/types․lisp file4332
 Node: Packages4639
 Node: The alexandria+ package4829
 Ref: go to the ALEXANDRIA+ package4952
-Node: Definitions6138
-Node: Exported definitions6410
-Node: Exported macros6655
-Ref: go to the ALEXANDRIA+∶∶DEFPROP macro6857
-Node: Exported functions7147
-Ref: go to the ALEXANDRIA+∶∶ALIST-KEYS function7338
-Ref: go to the ALEXANDRIA+∶∶ALIST-VALUES function7588
-Ref: go to the ALEXANDRIA+∶∶ALISTP function7834
-Ref: go to the ALEXANDRIA+∶∶CDR-ASSOC function8081
-Ref: go to the ALEXANDRIA+∶∶PLISTP function8336
-Node: Exported types8580
-Ref: go to the ALEXANDRIA+∶∶ALIST type8727
-Ref: go to the ALEXANDRIA+∶∶PERCENTAGE type9131
-Ref: go to the ALEXANDRIA+∶∶PLIST type9357
-Ref: go to the ALEXANDRIA+∶∶PROBABILITY type9762
-Node: Internal definitions9968
-Node: Internal special variables10162
-Ref: go to the ALEXANDRIA+∶∶*ASSOC-TEST* special variable10363
-Node: Indexes10575
-Node: Concept index10772
-Node: Function index12692
-Node: Variable index13727
-Node: Data type index14172
+Node: Definitions6100
+Node: Exported definitions6372
+Node: Exported macros6617
+Ref: go to the ALEXANDRIA+∶∶DEFPROP macro6819
+Node: Exported functions7109
+Ref: go to the ALEXANDRIA+∶∶ALIST-KEYS function7300
+Ref: go to the ALEXANDRIA+∶∶ALIST-VALUES function7550
+Ref: go to the ALEXANDRIA+∶∶ALISTP function7796
+Ref: go to the ALEXANDRIA+∶∶CDR-ASSOC function8043
+Ref: go to the ALEXANDRIA+∶∶PLISTP function8298
+Node: Exported types8542
+Ref: go to the ALEXANDRIA+∶∶ALIST type8689
+Ref: go to the ALEXANDRIA+∶∶PERCENTAGE type9093
+Ref: go to the ALEXANDRIA+∶∶PLIST type9319
+Ref: go to the ALEXANDRIA+∶∶PROBABILITY type9724
+Node: Internal definitions9930
+Node: Internal special variables10124
+Ref: go to the ALEXANDRIA+∶∶*ASSOC-TEST* special variable10325
+Node: Indexes10537
+Node: Concept index10734
+Node: Function index12654
+Node: Variable index13689
+Node: Data type index14134
 
 End Tag Table
 
