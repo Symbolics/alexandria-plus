@@ -27,9 +27,10 @@
   "Type designator for ALIST. Implemented as a SATISFIES type, hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR."
   '(satisfies alistp))
 
-(defun cdr-assoc (item alist)		;this is the name LispWorks uses
+(defun cdr-assoc (item alist &key (test *assoc-test* testp))	;this is the name LispWorks uses
   "Return the value associated with ITEM in ALIST."
-  (cdr (assoc item alist)))
+  (declare (ignore testp))
+  (cdr (assoc item alist :test test)))
 
 (defun alist-keys (alist)
   "Returns a list of the keys in ALIST."
