@@ -28,7 +28,7 @@
   '(satisfies alistp))
 
 (defun cdr-assoc (item alist &key (test *assoc-test* testp))	;this is the name LispWorks uses
-  "Return the value associated with ITEM in ALIST."
+  "CDR-ASSOC returns the cdr of the first cons in the alist ALIST that satisfies the test, or nil if no element of ALIST matches.. The arguments are all as specified for the Common Lisp function ASSOC."
   (declare (ignore testp))
   (cdr (assoc item alist :test test)))
 
@@ -48,7 +48,7 @@
   "Returns VALUE if it is a properly formed PLIST, NIL otherwise."
   (when (listp value)
     (loop :for rest :on value :by #'cddr
-       :unless (and (keywordp (car rest))
+       :unless (and (symbolp (car rest))
                     (cdr rest))
        :do (return nil)
 	  :finally (return value))))
@@ -63,3 +63,4 @@ After this is done (CL:GET symbol indicator) returns VALUE"
   (when (not (symbolp symbol))
     (error "~S is not a symbol" symbol))
   `(setf (get ',symbol ',indicator) ',value))
+
