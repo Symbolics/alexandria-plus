@@ -68,6 +68,17 @@
     (defprop test-prop hk pistol)
     (is equal 'hk (get 'test-prop 'pistol))))
 
+(define-test plist-keys
+  :parent plist
+  (let ((result (plist-keys '(:a 1 :b 2 :c 3))))
+    (true (and (subsetp '(:a :b :c) result)
+	       (subsetp result '(:a :b :c))))))
+
+(define-test plist-values
+  :parent plist
+  (let ((result (plist-values '(:a 1 :b 2 :c 3))))
+    (true (and (subsetp '(1 2 3) result)
+	       (subsetp result '(1 2 3))))))
 
 
 ;;; types

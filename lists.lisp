@@ -64,3 +64,20 @@ After this is done (CL:GET symbol indicator) returns VALUE"
     (error "~S is not a symbol" symbol))
   `(setf (get ',symbol ',indicator) ',value))
 
+(defun plist-keys (plist)
+  "Return the keys of PLIST"
+  (when (not (plistp plist))
+    (error "~S is not a plist, it is a ~S" plist (type-of plist)))
+  (let (keys)
+    (alexandria:doplist (k v plist)
+      (push k keys))
+    (reverse keys)))
+
+(defun plist-values (plist)
+  "Return the values of PLIST"
+  (when (not (plistp plist))
+    (error "~S is not a plist, it is a ~S" plist (type-of plist)))
+  (let (vals)
+    (alexandria:doplist (k v plist)
+      (push v vals))
+    (reverse vals)))
