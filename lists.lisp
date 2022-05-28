@@ -44,11 +44,14 @@
 
 ;;; plists
 
-(defun plistp (value)
-  "Returns VALUE if it is a properly formed PLIST, NIL otherwise."
+(defun plistp (value &key (allow-symbol-keys nil))
+  "Returns VALUE if it is a properly formed PLIST, NIL otherwise.
+If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords"
   (when (listp value)
     (loop :for rest :on value :by #'cddr
-       :unless (and (symbolp (car rest))
+	  :unless (and (if allow-symbol-keys
+			   (symbolp (car rest))
+			   (keywordp (car rest)))
                     (cdr rest))
        :do (return nil)
 	  :finally (return value))))

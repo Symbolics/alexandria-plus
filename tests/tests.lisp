@@ -1,5 +1,5 @@
-;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ALEXANDRIA/TESTS -*-
-;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
+;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ALEXANDRIA+/TESTS -*-
+;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
 
 (in-package :alexandria+/tests)
 
@@ -59,7 +59,9 @@
   (true (plistp '(:foo :bar)))
   (true (plistp '(:foo "bar")))
   (false (plistp ()))
-  (false (plistp '("foo" "bar"))))
+  (false (plistp '("foo" "bar")))
+  (false (plistp '(foo bar)))
+  (true (plistp '(foo bar) :allow-symbol-keys t)))
 
 (define-test defprop
   :parent plist
