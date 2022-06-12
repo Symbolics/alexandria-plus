@@ -31,6 +31,7 @@
   (false (alistp 5))
   (false (alistp (cons "foo" "bar"))))
 
+#+nil
 (define-test cdr-assoc
   :parent alist
   (fail (cdr-assoc nil 1))

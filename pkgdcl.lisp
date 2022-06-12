@@ -11,7 +11,6 @@
 	   #:plist-keys
 	   #:alist-values
 	   #:plist-values
-	   #:cdr-assoc
 
 	   ;; Types
 	   #:probability

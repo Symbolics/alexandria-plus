@@ -9,6 +9,7 @@
 
 ;;; alists
 
+#+nil
 (defvar *assoc-test* #'equal "Global equality test for assoc")
 
 (defun alistp (value)
@@ -27,8 +28,9 @@
   "Type designator for ALIST. Implemented as a SATISFIES type, hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR."
   '(satisfies alistp))
 
+#+nil
 (defun cdr-assoc (item alist &key (test *assoc-test* testp))	;this is the name LispWorks uses
-  "CDR-ASSOC returns the cdr of the first cons in the alist ALIST that satisfies the test, or nil if no element of ALIST matches.. The arguments are all as specified for the Common Lisp function ASSOC."
+  "CDR-ASSOC returns the cdr of the first cons in the alist ALIST that satisfies the test, or nil if no element of ALIST matches.  The arguments are all as specified for the Common Lisp function ASSOC."
   (declare (ignore testp))
   (cdr (assoc item alist :test test)))
 
