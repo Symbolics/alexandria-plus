@@ -1,5 +1,5 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ASDF -*-
-;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
 
 (defsystem "alexandria+"
   :description "A conservative set of extensions to Alexandria utilities."
@@ -11,7 +11,8 @@
   :depends-on ("alexandria")
   :components ((:file "pkgdcl")
 	       (:file "lists")
-	       (:file "types"))
+	       (:file "types")
+	       (:file "control-flow"))
   :in-order-to ((test-op (test-op :alexandria+/tests))))
 
 (defsystem "alexandria+/tests"

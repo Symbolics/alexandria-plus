@@ -104,3 +104,15 @@
   (true (typep 100 'percentage))
   (false (typep 101 'percentage))
   (false (typep -1 'percentage)))
+
+
+;;; control-flow
+
+(define-test control-flow
+  :parent all)
+
+(define-test unlessf
+  :parent control-flow
+  (let (val)
+    (is equal 'bar (unlessf val 'bar))
+    (false (unlessf val 'baz))))

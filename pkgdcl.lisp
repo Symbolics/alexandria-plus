@@ -17,4 +17,7 @@
 	   #:percentage
 
 	   ;; Utilities
-	   #:defprop))
+	   #:defprop
+
+	   ;; Control Flow
+	   #:unlessf))
