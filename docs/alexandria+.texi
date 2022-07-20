@@ -1,0 +1,769 @@
+\input texinfo
+
+@c alexandria+.texi --- Reference manual
+
+@c Copyright (C) 2019-2022 Steven Nunez
+
+@c This file is part of Alexandria+.
+
+@c This program is distributed under the terms of the Microsoft Public
+@c License.
+
+
+@c Commentary:
+
+@c Generated automatically by Declt version 4.0 beta 2 "William Riker"
+@c on Wed Jul 20 10:57:50 2022 GMT+8.
+
+
+@c ====================================================================
+@c Header
+@c ====================================================================
+@c %**start of header
+@setfilename alexandria+.info
+@settitle The Alexandria+ Reference Manual
+@afourpaper
+@documentencoding UTF-8
+@c %**end of header
+
+
+
+@c ====================================================================
+@c Format Specific Tweaks
+@c ====================================================================
+@tex
+%% Declt uses several Unicode characters to "reveal" blanks. This
+%% works fine in HTML or Info output, but TeX will have problems with
+%% these. The code below translates those characters to something that
+%% TeX can handle.
+
+%% U+23B5 (Bottom Square Bracket), used to reveal white spaces, is
+%% translated to its Computer Modern teletype version.
+\DeclareUnicodeCharacter{23B5}{{\tt\char'040}}
+
+%% U+21B5 (Downwards Arrow With Corner Leftwards), used to reveal
+%% carriage returns, is translated to \hookleftarrow in math mode.
+\DeclareUnicodeCharacter{21B5}{\ensuremath\hookleftarrow}
+
+%% U+21E5 (Rightwards Arrow To Bar), used to reveal tabs, is
+%% translated to something that looks similar, based on a rightarrow
+%% and a vertical bar from the math extension font.
+\DeclareUnicodeCharacter{21E5}{%
+  \ensuremath{\rightarrow\kern-.5em\mathchar\"130C}}
+
+
+%% Declt uses several Unicode characters to replace "fragile" ones in
+%% anchor names and references. These characters are chosen to resemble
+%% the original ones, without interfering with Info syntax. In TeX
+%% however, we can switch them back to the original versions, because
+%% cross-references are done differently. In theory, I think we could do
+%% something similar for HTML output (again, only the Info syntax poses
+%% problems), but I don't know how to do something similar to what's
+%% below.
+
+%% U+2024 (One Dot Leader) replaces periods.
+\DeclareUnicodeCharacter{2024}{.}
+
+%% U+2236 (Ratio) replaces colons.
+\DeclareUnicodeCharacter{2236}{:}
+
+%% U+2768 (Medium Left Parenthesis Ornament) replaces left parenthesis.
+\DeclareUnicodeCharacter{2768}{(}
+
+%% U+2769 (Medium Right Parenthesis Ornament) replaces right parenthesis.
+\DeclareUnicodeCharacter{2769}{)}
+
+%% U+214B (Turned Ampersand) replaces ampersands.
+\DeclareUnicodeCharacter{214B}{&}
+
+%% U+2216 (Set Minus) replaces backslashes.
+\DeclareUnicodeCharacter{2216}{\char"5C}
+
+%% The following ones are already defined in texinfo.tex so we have nothing
+%% more to do:
+%% U+201A (Single Low-9 Quotation Mark) replaces commas.
+%% U+2205 (Empty Set) replaces empty symbol names.
+
+@end tex
+
+
+
+@c ====================================================================
+@c Settings
+@c ====================================================================
+@setchapternewpage odd
+@documentdescription
+The Alexandria+ Reference Manual, version 1.0.0.
+@end documentdescription
+
+
+
+@c ====================================================================
+@c New Commands
+@c ====================================================================
+
+@c ---------------
+@c Indexing macros
+@c ---------------
+
+@c Packages
+@macro packageindex{name}
+@tpindex \name\
+@tpindex @r{Package, }\name\
+@end macro
+
+@c Systems
+@macro systemindex{name}
+@tpindex \name\
+@tpindex @r{System, }\name\
+@end macro
+
+@c Modules
+@macro moduleindex{name}
+@tpindex @t{\name\}
+@tpindex Module, @t{\name\}
+@end macro
+
+@c Files
+@macro fileindex{name}
+@tpindex @t{\name\}
+@tpindex File, @t{\name\}
+@end macro
+
+@c The following macros are meant to be used within @defxxx environments.
+@c Texinfo performs half the indexing job and we do the other half.
+
+@c Constants
+@macro constantsubindex{name}
+@vindex @r{Constant, }\name\
+@end macro
+
+@c Special variables
+@macro specialsubindex{name}
+@vindex @r{Special Variable, }\name\
+@end macro
+
+@c Symbol macros
+@macro symbolmacrosubindex{name}
+@vindex @r{Symbol Macro, }\name\
+@end macro
+
+@c Slots
+@macro slotsubindex{name}
+@vindex @r{Slot, }\name\
+@end macro
+
+@c Macros
+@macro macrosubindex{name}
+@findex @r{Macro, }\name\
+@end macro
+
+@c Compiler Macros
+@macro compilermacrosubindex{name}
+@findex @r{Compiler Macro, }\name\
+@end macro
+
+@c Functions
+@macro functionsubindex{name}
+@findex @r{Function, }\name\
+@end macro
+
+@c Methods
+@macro methodsubindex{name}
+@findex @r{Method, }\name\
+@end macro
+
+@c Generic Functions
+@macro genericsubindex{name}
+@findex @r{Generic Function, }\name\
+@end macro
+
+@c Setf Expanders
+@macro expandersubindex{name}
+@findex @r{Setf Expander, }\name\
+@end macro
+
+@c Method Combinations
+@macro combinationsubindex{name}
+@findex @r{Method Combination, }\name\
+@end macro
+
+@c Conditions
+@macro conditionsubindex{name}
+@tpindex @r{Condition, }\name\
+@end macro
+
+@c Structures
+@macro structuresubindex{name}
+@tpindex @r{Structure, }\name\
+@end macro
+
+@c Types
+@macro typesubindex{name}
+@tpindex @r{Type, }\name\
+@end macro
+
+@c Classes
+@macro classsubindex{name}
+@tpindex @r{Class, }\name\
+@end macro
+
+
+
+@c ====================================================================
+@c Info Category and Directory
+@c ====================================================================
+@dircategory Lisp-Stat
+@direntry
+* Alexandria+ Reference Manual: (alexandria+). The Alexandria+ Reference Manual.
+@end direntry
+
+
+
+@c ====================================================================
+@c Copying
+@c ====================================================================
+@copying
+@quotation
+Copyright @copyright{} 2019-2022 Steven Nunez
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+@ignore
+Permission is granted to process this file through TeX and print the
+results, provided the printed document carries a copying permission
+notice identical to this one except for the removal of this paragraph
+(this paragraph not being relevant to the printed manual).
+
+@end ignore
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled ``Copying'' is included exactly as in the original.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be translated as well.
+@end quotation
+@end copying
+
+
+
+@c ====================================================================
+@c Title Page
+@c ====================================================================
+@titlepage
+@title The Alexandria+ Reference Manual
+@subtitle A conservative set of extensions to Alexandria utilities, version 1.0.0
+
+@author Steven Nunez <@email{steve@atchar{}symbolics.tech}>
+
+@page
+@quotation
+This manual was generated automatically by Declt 4.0b2.
+@end quotation
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+
+
+@c ====================================================================
+@c Table of Contents
+@c ====================================================================
+@contents
+
+
+
+@c ====================================================================
+@c Top
+@c ====================================================================
+@ifnottex
+@node Top, Copying, (dir), (dir)
+@top The Alexandria+ Reference Manual
+This is the Alexandria+ Reference Manual, version 1.0.0,
+generated automatically by Declt version 4.0b2.
+
+@menu
+* Copying:: The Microsoft Public License
+* Systems:: The systems documentation
+* Files:: The files documentation
+* Packages:: The packages documentation
+* Definitions:: The symbols documentation
+* Indexes:: Concepts, functions, variables and data types
+@end menu
+
+@insertcopying
+@end ifnottex
+
+
+
+@c ====================================================================
+@c Copying
+@c ====================================================================
+@node Copying, Systems, Top, Top
+@unnumbered Copying
+@quotation
+This program is distributed under the terms of the Microsoft Public
+License.
+@end quotation
+
+
+
+@c ====================================================================
+@c Systems
+@c ====================================================================
+@node Systems, Files, Copying, Top
+@chapter Systems
+The main system appears first, followed by any subsystem dependency.
+
+@menu
+* The alexandria+ system::
+@end menu
+
+
+@c ----------------------
+@c The alexandria+ system
+@c ----------------------
+@node The alexandria+ system, , Systems, Systems
+@section @t{alexandria+}
+@anchor{❨1❩}@c
+@systemindex{alexandria+}@c
+A conservative set of extensions to Alexandria utilities.
+@table @strong
+@item Author
+Steven Nunez <@email{steve@atchar{}symbolics.tech}>
+@item Home Page
+@uref{https://github.com/symbolics/alexandria+}
+@item License
+MS-PL
+@item Long Description
+Utilities not in Alexandria@comma{} UIOP or OSICAT.
+@item Version
+1.0.0
+@item Dependency
+@t{alexandria}@: (system).
+@item Source
+@ref{❨2❩, , @t{alexandria+.asd}}.
+@item Child Components
+@itemize @bullet
+@item
+@ref{❨3❩, , @t{pkgdcl.lisp}}@: (file).
+@item
+@ref{❨4❩, , @t{lists.lisp}}@: (file).
+@item
+@ref{❨5❩, , @t{types.lisp}}@: (file).
+@item
+@ref{❨6❩, , @t{control-flow.lisp}}@: (file).
+@end itemize
+@end table
+
+
+
+@c ====================================================================
+@c Files
+@c ====================================================================
+@node Files, Packages, Systems, Top
+@chapter Files
+Files are sorted by type and then listed depth-first from the systems
+components trees.
+
+@menu
+* Lisp files::
+@end menu
+
+
+@c ----------
+@c Lisp files
+@c ----------
+@node Lisp files, , Files, Files
+@section Lisp
+@menu
+* The alexandria+/alexandria+․asd file::
+* The alexandria+/pkgdcl․lisp file::
+* The alexandria+/lists․lisp file::
+* The alexandria+/types․lisp file::
+* The alexandria+/control-flow․lisp file::
+@end menu
+
+@node The alexandria+/alexandria+․asd file, The alexandria+/pkgdcl․lisp file, Lisp files, Lisp files
+@subsection @t{alexandria+/alexandria+.asd}
+@anchor{❨2❩}@c
+@fileindex{alexandria+.asd}@c
+@table @strong
+@item Source
+@ref{❨2❩, , @t{alexandria+.asd}}.
+@item Parent Component
+@ref{❨1❩, , @t{alexandria+}}@: (system).
+@item ASDF Systems
+@ref{❨1❩, , @t{alexandria+}}.
+@end table
+
+@node The alexandria+/pkgdcl․lisp file, The alexandria+/lists․lisp file, The alexandria+/alexandria+․asd file, Lisp files
+@subsection @t{alexandria+/pkgdcl.lisp}
+@anchor{❨3❩}@c
+@fileindex{pkgdcl.lisp}@c
+@table @strong
+@item Source
+@ref{❨2❩, , @t{alexandria+.asd}}.
+@item Parent Component
+@ref{❨1❩, , @t{alexandria+}}@: (system).
+@item Packages
+@ref{❨7❩, , @t{alexandria+}}.
+@end table
+
+@node The alexandria+/lists․lisp file, The alexandria+/types․lisp file, The alexandria+/pkgdcl․lisp file, Lisp files
+@subsection @t{alexandria+/lists.lisp}
+@anchor{❨4❩}@c
+@fileindex{lists.lisp}@c
+@table @strong
+@item Source
+@ref{❨2❩, , @t{alexandria+.asd}}.
+@item Parent Component
+@ref{❨1❩, , @t{alexandria+}}@: (system).
+@item Public Interface
+@itemize @bullet
+@item
+@ref{❨19❩, , @t{alist}}@: (type).
+@item
+@ref{❨15❩, , @t{alist-keys}}@: (function).
+@item
+@ref{❨9❩, , @t{alist-values}}@: (function).
+@item
+@ref{❨14❩, , @t{alistp}}@: (function).
+@item
+@ref{❨12❩, , @t{defprop}}@: (macro).
+@item
+@ref{❨18❩, , @t{plist}}@: (type).
+@item
+@ref{❨13❩, , @t{plist-keys}}@: (function).
+@item
+@ref{❨16❩, , @t{plist-values}}@: (function).
+@item
+@ref{❨11❩, , @t{plistp}}@: (function).
+@end itemize
+@end table
+
+@node The alexandria+/types․lisp file, The alexandria+/control-flow․lisp file, The alexandria+/lists․lisp file, Lisp files
+@subsection @t{alexandria+/types.lisp}
+@anchor{❨5❩}@c
+@fileindex{types.lisp}@c
+@table @strong
+@item Source
+@ref{❨2❩, , @t{alexandria+.asd}}.
+@item Parent Component
+@ref{❨1❩, , @t{alexandria+}}@: (system).
+@item Public Interface
+@itemize @bullet
+@item
+@ref{❨10❩, , @t{percentage}}@: (type).
+@item
+@ref{❨17❩, , @t{probability}}@: (type).
+@end itemize
+@end table
+
+@node The alexandria+/control-flow․lisp file, , The alexandria+/types․lisp file, Lisp files
+@subsection @t{alexandria+/control-flow.lisp}
+@anchor{❨6❩}@c
+@fileindex{control-flow.lisp}@c
+@table @strong
+@item Source
+@ref{❨2❩, , @t{alexandria+.asd}}.
+@item Parent Component
+@ref{❨1❩, , @t{alexandria+}}@: (system).
+@item Public Interface
+@ref{❨8❩, , @t{unlessf}}@: (macro).
+@end table
+
+
+
+@c ====================================================================
+@c Packages
+@c ====================================================================
+@node Packages, Definitions, Files, Top
+@chapter Packages
+Packages are listed by definition order.
+
+@menu
+* The alexandria+ package::
+@end menu
+
+
+@c -----------------------
+@c The alexandria+ package
+@c -----------------------
+@node The alexandria+ package, , Packages, Packages
+@section @t{alexandria+}
+@anchor{❨7❩}@c
+@packageindex{alexandria+}@c
+@table @strong
+@item Source
+@ref{❨3❩, , @t{pkgdcl.lisp}}.
+@item Use List
+@itemize @bullet
+@item
+@t{alexandria}.
+@item
+@t{common-lisp}.
+@end itemize
+@item Used By List
+@itemize @bullet
+@item
+@t{data-frame}.
+@item
+@t{plot}.
+@end itemize
+@item Public Interface
+@itemize @bullet
+@item
+@ref{❨19❩, , @t{alist}}@: (type).
+@item
+@ref{❨15❩, , @t{alist-keys}}@: (function).
+@item
+@ref{❨9❩, , @t{alist-values}}@: (function).
+@item
+@ref{❨14❩, , @t{alistp}}@: (function).
+@item
+@ref{❨12❩, , @t{defprop}}@: (macro).
+@item
+@ref{❨10❩, , @t{percentage}}@: (type).
+@item
+@ref{❨18❩, , @t{plist}}@: (type).
+@item
+@ref{❨13❩, , @t{plist-keys}}@: (function).
+@item
+@ref{❨16❩, , @t{plist-values}}@: (function).
+@item
+@ref{❨11❩, , @t{plistp}}@: (function).
+@item
+@ref{❨17❩, , @t{probability}}@: (type).
+@item
+@ref{❨8❩, , @t{unlessf}}@: (macro).
+@end itemize
+@end table
+
+
+
+@c ====================================================================
+@c Definitions
+@c ====================================================================
+@node Definitions, Indexes, Packages, Top
+@chapter Definitions
+Definitions are sorted by export status, category, package, and then by
+lexicographic order.
+
+@menu
+* Public Interface::
+@end menu
+
+
+@c ----------------
+@c Public Interface
+@c ----------------
+@node Public Interface, , Definitions, Definitions
+@section Public Interface
+@menu
+* Public macros::
+* Public ordinary functions::
+* Public types::
+@end menu
+
+@node Public macros, Public ordinary functions, Public Interface, Public Interface
+@subsection Macros
+@deffn {Macro} {defprop} (symbol value indicator)
+@anchor{❨12❩}@c
+@macrosubindex{defprop}@c
+Gives SYMBOL an INDICATOR property of VALUE.@*
+After this is done (CL:GET symbol indicator) returns VALUE
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deffn
+@deffn {Macro} {unlessf} (place value-form)
+@anchor{❨8❩}@c
+@macrosubindex{unlessf}@c
+When PLACE is NIL@comma{} evaluate VALUE-FORM and save it there.
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨6❩, , @t{control-flow.lisp}}.
+@end table
+@end deffn
+
+@node Public ordinary functions, Public types, Public macros, Public Interface
+@subsection Ordinary functions
+@deffn {Function} {alist-keys} (alist)
+@anchor{❨15❩}@c
+@functionsubindex{alist-keys}@c
+Returns a list of the keys in ALIST.
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deffn
+@deffn {Function} {alist-values} (alist)
+@anchor{❨9❩}@c
+@functionsubindex{alist-values}@c
+Returns a list of the values in ALIST.
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deffn
+@deffn {Function} {alistp} (value)
+@anchor{❨14❩}@c
+@functionsubindex{alistp}@c
+Returns T if VALUE is an ALIST.
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deffn
+@deffn {Function} {plist-keys} (plist)
+@anchor{❨13❩}@c
+@functionsubindex{plist-keys}@c
+Return the keys of PLIST
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deffn
+@deffn {Function} {plist-values} (plist)
+@anchor{❨16❩}@c
+@functionsubindex{plist-values}@c
+Return the values of PLIST
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deffn
+@deffn {Function} {plistp} (value &key allow-symbol-keys)
+@anchor{❨11❩}@c
+@functionsubindex{plistp}@c
+Returns VALUE if it is a properly formed PLIST@comma{} NIL otherwise.@*
+If ALLOW-SYMBOL-KEYS is not nil@comma{} keys may be either symbols or keywords
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deffn
+
+@node Public types, , Public ordinary functions, Public Interface
+@subsection Types
+@deftp {Type} {alist} ()
+@anchor{❨19❩}@c
+@typesubindex{alist}@c
+Type designator for ALIST. Implemented as a SATISFIES type@comma{} hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deftp
+@deftp {Type} {percentage} ()
+@anchor{❨10❩}@c
+@typesubindex{percentage}@c
+A number between 0 and 100
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨5❩, , @t{types.lisp}}.
+@end table
+@end deftp
+@deftp {Type} {plist} ()
+@anchor{❨18❩}@c
+@typesubindex{plist}@c
+Type designator for PLIST. Implemented as a SATISFIES type@comma{} hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨4❩, , @t{lists.lisp}}.
+@end table
+@end deftp
+@deftp {Type} {probability} ()
+@anchor{❨17❩}@c
+@typesubindex{probability}@c
+A number between 0 and 1
+@table @strong
+@item Package
+@ref{❨7❩, , @t{alexandria+}}.
+@item Source
+@ref{❨5❩, , @t{types.lisp}}.
+@end table
+@end deftp
+
+
+
+@c ====================================================================
+@c Indexes
+@c ====================================================================
+@node Indexes, , Definitions, Top
+@appendix Indexes
+@menu
+* Concept index::
+* Function index::
+* Variable index::
+* Data type index::
+@end menu
+
+
+@c -------------
+@c Concept index
+@c -------------
+@node Concept index, Function index, Indexes, Indexes
+@appendixsec Concepts
+@printindex cp
+
+@page
+
+
+@c --------------
+@c Function index
+@c --------------
+@node Function index, Variable index, Concept index, Indexes
+@appendixsec Functions
+@printindex fn
+
+@page
+
+
+@c --------------
+@c Variable index
+@c --------------
+@node Variable index, Data type index, Function index, Indexes
+@appendixsec Variables
+@printindex vr
+
+@page
+
+
+@c ---------------
+@c Data type index
+@c ---------------
+@node Data type index, , Variable index, Indexes
+@appendixsec Data types
+@printindex tp
+
+@bye
+
+@c alexandria+.texi ends here

@@ -1,29 +1,71 @@
-This is alexandria+.info, produced by makeinfo version 6.7 from
+This is alexandria+.info, produced by makeinfo version 6.8 from
 alexandria+.texi.
 
-INFO-DIR-SECTION Common Lisp
+     Copyright © 2019-2022 Steven Nunez
+
+     Permission is granted to make and distribute verbatim copies of
+     this manual provided the copyright notice and this permission
+     notice are preserved on all copies.
+
+     Permission is granted to copy and distribute modified versions of
+     this manual under the conditions for verbatim copying, provided
+     also that the section entitled “Copying” is included exactly as in
+     the original.
+
+     Permission is granted to copy and distribute translations of this
+     manual into another language, under the above conditions for
+     modified versions, except that this permission notice may be
+     translated as well.
+INFO-DIR-SECTION Lisp-Stat
 START-INFO-DIR-ENTRY
-* Alexandria+ Reference: (alexandria+). The Alexandria+ Reference Manual.
+* Alexandria+ Reference Manual: (alexandria+). The Alexandria+ Reference Manual.
 END-INFO-DIR-ENTRY
 
 
-File: alexandria+.info,  Node: Top,  Next: Systems,  Prev: (dir),  Up: (dir)
+File: alexandria+.info,  Node: Top,  Next: Copying,  Prev: (dir),  Up: (dir)
 
 The Alexandria+ Reference Manual
 ********************************
 
-This is the Alexandria+ Reference Manual, version 1.1.
+This is the Alexandria+ Reference Manual, version 1.0.0, generated
+automatically by Declt version 4.0b2.
 
 * Menu:
 
+* Copying:: The Microsoft Public License
 * Systems:: The systems documentation
 * Files:: The files documentation
 * Packages:: The packages documentation
 * Definitions:: The symbols documentation
 * Indexes:: Concepts, functions, variables and data types
 
+     Copyright © 2019-2022 Steven Nunez
+
+     Permission is granted to make and distribute verbatim copies of
+     this manual provided the copyright notice and this permission
+     notice are preserved on all copies.
+
+     Permission is granted to copy and distribute modified versions of
+     this manual under the conditions for verbatim copying, provided
+     also that the section entitled “Copying” is included exactly as in
+     the original.
+
+     Permission is granted to copy and distribute translations of this
+     manual into another language, under the above conditions for
+     modified versions, except that this permission notice may be
+     translated as well.
+
 
-File: alexandria+.info,  Node: Systems,  Next: Files,  Prev: Top,  Up: Top
+File: alexandria+.info,  Node: Copying,  Next: Systems,  Prev: Top,  Up: Top
+
+Copying
+*******
+
+     This program is distributed under the terms of the Microsoft Public
+     License.
+
+
+File: alexandria+.info,  Node: Systems,  Next: Files,  Prev: Copying,  Up: Top
 
 1 Systems
 *********
@@ -40,31 +82,26 @@ File: alexandria+.info,  Node: The alexandria+ system,  Prev: Systems,  Up: Syst
 1.1 alexandria+
 ===============
 
+A conservative set of extensions to Alexandria utilities.
 *Author*
      Steven Nunez <<steve@symbolics.tech>>
 *Home Page*
      <https://github.com/symbolics/alexandria+>
 *License*
      MS-PL
-*Description*
-     A conservative set of extensions to Alexandria utilities.
 *Long Description*
      Utilities not in Alexandria, UIOP or OSICAT.
 *Version*
-     1.1
+     1.0.0
 *Dependency*
-     alexandria
+     alexandria (system).
 *Source*
-     *note alexandria+.asd: go to the alexandria+․asd file. (file)
-*Directory*
-     s:/src/alexandria+/
-*Components*
-        • *note pkgdcl.lisp: go to the alexandria+/pkgdcl․lisp file.
-          (file)
-        • *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
-        • *note types.lisp: go to the alexandria+/types․lisp file.
-          (file)
+     *note alexandria+.asd: ❨2❩.
+*Child Components*
+        • *note pkgdcl.lisp: ❨3❩. (file).
+        • *note lists.lisp: ❨4❩. (file).
+        • *note types.lisp: ❨5❩. (file).
+        • *note control-flow.lisp: ❨6❩. (file).
 
 
 File: alexandria+.info,  Node: Files,  Next: Packages,  Prev: Systems,  Up: Top
@@ -87,34 +124,37 @@ File: alexandria+.info,  Node: Lisp files,  Prev: Files,  Up: Files
 
 * Menu:
 
-* The alexandria+.asd file: The alexandria+․asd file.
-* The alexandria+/pkgdcl.lisp file: The alexandria+/pkgdcl․lisp file.
-* The alexandria+/lists.lisp file: The alexandria+/lists․lisp file.
-* The alexandria+/types.lisp file: The alexandria+/types․lisp file.
+* The alexandria+/alexandria+․asd file::
+* The alexandria+/pkgdcl․lisp file::
+* The alexandria+/lists․lisp file::
+* The alexandria+/types․lisp file::
+* The alexandria+/control-flow․lisp file::
 
 
-File: alexandria+.info,  Node: The alexandria+․asd file,  Next: The alexandria+/pkgdcl․lisp file,  Prev: Lisp files,  Up: Lisp files
+File: alexandria+.info,  Node: The alexandria+/alexandria+․asd file,  Next: The alexandria+/pkgdcl․lisp file,  Prev: Lisp files,  Up: Lisp files
 
-2.1.1 alexandria+.asd
----------------------
+2.1.1 alexandria+/alexandria+.asd
+---------------------------------
 
-*Location*
-     alexandria+.asd
-*Systems*
-     *note alexandria+: go to the alexandria+ system. (system)
+*Source*
+     *note alexandria+.asd: ❨2❩.
+*Parent Component*
+     *note alexandria+: ❨1❩. (system).
+*ASDF Systems*
+     *note alexandria+: ❨1❩.
 
 
-File: alexandria+.info,  Node: The alexandria+/pkgdcl․lisp file,  Next: The alexandria+/lists․lisp file,  Prev: The alexandria+․asd file,  Up: Lisp files
+File: alexandria+.info,  Node: The alexandria+/pkgdcl․lisp file,  Next: The alexandria+/lists․lisp file,  Prev: The alexandria+/alexandria+․asd file,  Up: Lisp files
 
 2.1.2 alexandria+/pkgdcl.lisp
 -----------------------------
 
-*Parent*
-     *note alexandria+: go to the alexandria+ system. (system)
-*Location*
-     pkgdcl.lisp
+*Source*
+     *note alexandria+.asd: ❨2❩.
+*Parent Component*
+     *note alexandria+: ❨1❩. (system).
 *Packages*
-     *note alexandria+: go to the ALEXANDRIA+ package.
+     *note alexandria+: ❨7❩.
 
 
 File: alexandria+.info,  Node: The alexandria+/lists․lisp file,  Next: The alexandria+/types․lisp file,  Prev: The alexandria+/pkgdcl․lisp file,  Up: Lisp files
@@ -122,43 +162,47 @@ File: alexandria+.info,  Node: The alexandria+/lists․lisp file,  Next: The ale
 2.1.3 alexandria+/lists.lisp
 ----------------------------
 
-*Parent*
-     *note alexandria+: go to the alexandria+ system. (system)
-*Location*
-     lists.lisp
-*Exported Definitions*
-        • *note alist: go to the ALEXANDRIA+∶∶ALIST type. (type)
-        • *note alist-keys: go to the ALEXANDRIA+∶∶ALIST-KEYS function.
-          (function)
-        • *note alist-values: go to the ALEXANDRIA+∶∶ALIST-VALUES
-          function. (function)
-        • *note alistp: go to the ALEXANDRIA+∶∶ALISTP function.
-          (function)
-        • *note cdr-assoc: go to the ALEXANDRIA+∶∶CDR-ASSOC function.
-          (function)
-        • *note defprop: go to the ALEXANDRIA+∶∶DEFPROP macro. (macro)
-        • *note plist: go to the ALEXANDRIA+∶∶PLIST type. (type)
-        • *note plistp: go to the ALEXANDRIA+∶∶PLISTP function.
-          (function)
-*Internal Definitions*
-     *note *assoc-test*: go to the ALEXANDRIA+∶∶*ASSOC-TEST* special
-     variable. (special variable)
+*Source*
+     *note alexandria+.asd: ❨2❩.
+*Parent Component*
+     *note alexandria+: ❨1❩. (system).
+*Public Interface*
+        • *note alist: ❨19❩. (type).
+        • *note alist-keys: ❨15❩. (function).
+        • *note alist-values: ❨9❩. (function).
+        • *note alistp: ❨14❩. (function).
+        • *note defprop: ❨12❩. (macro).
+        • *note plist: ❨18❩. (type).
+        • *note plist-keys: ❨13❩. (function).
+        • *note plist-values: ❨16❩. (function).
+        • *note plistp: ❨11❩. (function).
 
 
-File: alexandria+.info,  Node: The alexandria+/types․lisp file,  Prev: The alexandria+/lists․lisp file,  Up: Lisp files
+File: alexandria+.info,  Node: The alexandria+/types․lisp file,  Next: The alexandria+/control-flow․lisp file,  Prev: The alexandria+/lists․lisp file,  Up: Lisp files
 
 2.1.4 alexandria+/types.lisp
 ----------------------------
 
-*Parent*
-     *note alexandria+: go to the alexandria+ system. (system)
-*Location*
-     types.lisp
-*Exported Definitions*
-        • *note percentage: go to the ALEXANDRIA+∶∶PERCENTAGE type.
-          (type)
-        • *note probability: go to the ALEXANDRIA+∶∶PROBABILITY type.
-          (type)
+*Source*
+     *note alexandria+.asd: ❨2❩.
+*Parent Component*
+     *note alexandria+: ❨1❩. (system).
+*Public Interface*
+        • *note percentage: ❨10❩. (type).
+        • *note probability: ❨17❩. (type).
+
+
+File: alexandria+.info,  Node: The alexandria+/control-flow․lisp file,  Prev: The alexandria+/types․lisp file,  Up: Lisp files
+
+2.1.5 alexandria+/control-flow.lisp
+-----------------------------------
+
+*Source*
+     *note alexandria+.asd: ❨2❩.
+*Parent Component*
+     *note alexandria+: ❨1❩. (system).
+*Public Interface*
+     *note unlessf: ❨8❩. (macro).
 
 
 File: alexandria+.info,  Node: Packages,  Next: Definitions,  Prev: Files,  Up: Top
@@ -179,30 +223,26 @@ File: alexandria+.info,  Node: The alexandria+ package,  Prev: Packages,  Up: Pa
 ===============
 
 *Source*
-     *note pkgdcl.lisp: go to the alexandria+/pkgdcl․lisp file. (file)
+     *note pkgdcl.lisp: ❨3❩.
 *Use List*
-     common-lisp
-*Exported Definitions*
-        • *note alist: go to the ALEXANDRIA+∶∶ALIST type. (type)
-        • *note alist-keys: go to the ALEXANDRIA+∶∶ALIST-KEYS function.
-          (function)
-        • *note alist-values: go to the ALEXANDRIA+∶∶ALIST-VALUES
-          function. (function)
-        • *note alistp: go to the ALEXANDRIA+∶∶ALISTP function.
-          (function)
-        • *note cdr-assoc: go to the ALEXANDRIA+∶∶CDR-ASSOC function.
-          (function)
-        • *note defprop: go to the ALEXANDRIA+∶∶DEFPROP macro. (macro)
-        • *note percentage: go to the ALEXANDRIA+∶∶PERCENTAGE type.
-          (type)
-        • *note plist: go to the ALEXANDRIA+∶∶PLIST type. (type)
-        • *note plistp: go to the ALEXANDRIA+∶∶PLISTP function.
-          (function)
-        • *note probability: go to the ALEXANDRIA+∶∶PROBABILITY type.
-          (type)
-*Internal Definitions*
-     *note *assoc-test*: go to the ALEXANDRIA+∶∶*ASSOC-TEST* special
-     variable. (special variable)
+        • alexandria.
+        • common-lisp.
+*Used By List*
+        • data-frame.
+        • plot.
+*Public Interface*
+        • *note alist: ❨19❩. (type).
+        • *note alist-keys: ❨15❩. (function).
+        • *note alist-values: ❨9❩. (function).
+        • *note alistp: ❨14❩. (function).
+        • *note defprop: ❨12❩. (macro).
+        • *note percentage: ❨10❩. (type).
+        • *note plist: ❨18❩. (type).
+        • *note plist-keys: ❨13❩. (function).
+        • *note plist-values: ❨16❩. (function).
+        • *note plistp: ❨11❩. (function).
+        • *note probability: ❨17❩. (type).
+        • *note unlessf: ❨8❩. (macro).
 
 
 File: alexandria+.info,  Node: Definitions,  Next: Indexes,  Prev: Packages,  Up: Top
@@ -215,80 +255,87 @@ lexicographic order.
 
 * Menu:
 
-* Exported definitions::
-* Internal definitions::
+* Public Interface::
 
 
-File: alexandria+.info,  Node: Exported definitions,  Next: Internal definitions,  Prev: Definitions,  Up: Definitions
+File: alexandria+.info,  Node: Public Interface,  Prev: Definitions,  Up: Definitions
 
-4.1 Exported definitions
-========================
+4.1 Public Interface
+====================
 
 * Menu:
 
-* Exported macros::
-* Exported functions::
-* Exported types::
+* Public macros::
+* Public ordinary functions::
+* Public types::
 
 
-File: alexandria+.info,  Node: Exported macros,  Next: Exported functions,  Prev: Exported definitions,  Up: Exported definitions
+File: alexandria+.info,  Node: Public macros,  Next: Public ordinary functions,  Prev: Public Interface,  Up: Public Interface
 
 4.1.1 Macros
 ------------
 
- -- Macro: defprop SYMBOL VALUE INDICATOR
+ -- Macro: defprop (symbol value indicator)
      Gives SYMBOL an INDICATOR property of VALUE.
      After this is done (CL:GET symbol indicator) returns VALUE
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
+          *note lists.lisp: ❨4❩.
+ -- Macro: unlessf (place value-form)
+     When PLACE is NIL, evaluate VALUE-FORM and save it there.
+     *Package*
+          *note alexandria+: ❨7❩.
+     *Source*
+          *note control-flow.lisp: ❨6❩.
 
 
-File: alexandria+.info,  Node: Exported functions,  Next: Exported types,  Prev: Exported macros,  Up: Exported definitions
+File: alexandria+.info,  Node: Public ordinary functions,  Next: Public types,  Prev: Public macros,  Up: Public Interface
 
-4.1.2 Functions
----------------
+4.1.2 Ordinary functions
+------------------------
 
- -- Function: alist-keys ALIST
+ -- Function: alist-keys (alist)
      Returns a list of the keys in ALIST.
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
- -- Function: alist-values ALIST
+          *note lists.lisp: ❨4❩.
+ -- Function: alist-values (alist)
      Returns a list of the values in ALIST.
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
- -- Function: alistp VALUE
+          *note lists.lisp: ❨4❩.
+ -- Function: alistp (value)
      Returns T if VALUE is an ALIST.
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
- -- Function: cdr-assoc ITEM ALIST
-     Return the value associated with ITEM in ALIST.
+          *note lists.lisp: ❨4❩.
+ -- Function: plist-keys (plist)
+     Return the keys of PLIST
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
- -- Function: plistp VALUE
+          *note lists.lisp: ❨4❩.
+ -- Function: plist-values (plist)
+     Return the values of PLIST
+     *Package*
+          *note alexandria+: ❨7❩.
+     *Source*
+          *note lists.lisp: ❨4❩.
+ -- Function: plistp (value &key allow-symbol-keys)
      Returns VALUE if it is a properly formed PLIST, NIL otherwise.
+     If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or
+     keywords
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
+          *note lists.lisp: ❨4❩.
 
 
-File: alexandria+.info,  Node: Exported types,  Prev: Exported functions,  Up: Exported definitions
+File: alexandria+.info,  Node: Public types,  Prev: Public ordinary functions,  Up: Public Interface
 
 4.1.3 Types
 -----------
@@ -298,57 +345,29 @@ File: alexandria+.info,  Node: Exported types,  Prev: Exported functions,  Up: E
      not recommended for performance intensive use.  Main usefullness as
      a type designator of the expected type in a TYPE-ERROR.
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
+          *note lists.lisp: ❨4❩.
  -- Type: percentage ()
      A number between 0 and 100
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note types.lisp: go to the alexandria+/types․lisp file.
-          (file)
+          *note types.lisp: ❨5❩.
  -- Type: plist ()
      Type designator for PLIST. Implemented as a SATISFIES type, hence
      not recommended for performance intensive use.  Main usefullness as
      a type designator of the expected type in a TYPE-ERROR.
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
+          *note lists.lisp: ❨4❩.
  -- Type: probability ()
      A number between 0 and 1
      *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
+          *note alexandria+: ❨7❩.
      *Source*
-          *note types.lisp: go to the alexandria+/types․lisp file.
-          (file)
-
-
-File: alexandria+.info,  Node: Internal definitions,  Prev: Exported definitions,  Up: Definitions
-
-4.2 Internal definitions
-========================
-
-* Menu:
-
-* Internal special variables::
-
-
-File: alexandria+.info,  Node: Internal special variables,  Prev: Internal definitions,  Up: Internal definitions
-
-4.2.1 Special variables
------------------------
-
- -- Special Variable: *assoc-test*
-     Global equality test for assoc
-     *Package*
-          *note alexandria+: go to the ALEXANDRIA+ package.
-     *Source*
-          *note lists.lisp: go to the alexandria+/lists․lisp file.
-          (file)
+          *note types.lisp: ❨5❩.
 
 
 File: alexandria+.info,  Node: Indexes,  Prev: Definitions,  Up: Top
@@ -369,34 +388,6 @@ File: alexandria+.info,  Node: Concept index,  Next: Function index,  Prev: Inde
 A.1 Concepts
 ============
 
- [index ]
-* Menu:
-
-* alexandria+.asd:                       The alexandria+․asd file.
-                                                                (line 6)
-* alexandria+/lists.lisp:                The alexandria+/lists․lisp file.
-                                                                (line 6)
-* alexandria+/pkgdcl.lisp:               The alexandria+/pkgdcl․lisp file.
-                                                                (line 6)
-* alexandria+/types.lisp:                The alexandria+/types․lisp file.
-                                                                (line 6)
-* File, Lisp, alexandria+.asd:           The alexandria+․asd file.
-                                                                (line 6)
-* File, Lisp, alexandria+/lists.lisp:    The alexandria+/lists․lisp file.
-                                                                (line 6)
-* File, Lisp, alexandria+/pkgdcl.lisp:   The alexandria+/pkgdcl․lisp file.
-                                                                (line 6)
-* File, Lisp, alexandria+/types.lisp:    The alexandria+/types․lisp file.
-                                                                (line 6)
-* Lisp File, alexandria+.asd:            The alexandria+․asd file.
-                                                                (line 6)
-* Lisp File, alexandria+/lists.lisp:     The alexandria+/lists․lisp file.
-                                                                (line 6)
-* Lisp File, alexandria+/pkgdcl.lisp:    The alexandria+/pkgdcl․lisp file.
-                                                                (line 6)
-* Lisp File, alexandria+/types.lisp:     The alexandria+/types․lisp file.
-                                                                (line 6)
-
 
 File: alexandria+.info,  Node: Function index,  Next: Variable index,  Prev: Concept index,  Up: Indexes
 
@@ -406,32 +397,40 @@ A.2 Functions
  [index ]
 * Menu:
 
-* alist-keys:                            Exported functions.   (line  6)
-* alist-values:                          Exported functions.   (line 13)
-* alistp:                                Exported functions.   (line 20)
-* cdr-assoc:                             Exported functions.   (line 27)
-* defprop:                               Exported macros.      (line  6)
-* Function, alist-keys:                  Exported functions.   (line  7)
-* Function, alist-values:                Exported functions.   (line 14)
-* Function, alistp:                      Exported functions.   (line 21)
-* Function, cdr-assoc:                   Exported functions.   (line 28)
-* Function, plistp:                      Exported functions.   (line 35)
-* Macro, defprop:                        Exported macros.      (line  7)
-* plistp:                                Exported functions.   (line 34)
+* alist-keys:                            Public ordinary functions.
+                                                               (line  6)
+* alist-values:                          Public ordinary functions.
+                                                               (line 12)
+* alistp:                                Public ordinary functions.
+                                                               (line 18)
+* defprop:                               Public macros.        (line  6)
+* Function, alist-keys:                  Public ordinary functions.
+                                                               (line  7)
+* Function, alist-values:                Public ordinary functions.
+                                                               (line 13)
+* Function, alistp:                      Public ordinary functions.
+                                                               (line 19)
+* Function, plist-keys:                  Public ordinary functions.
+                                                               (line 25)
+* Function, plist-values:                Public ordinary functions.
+                                                               (line 31)
+* Function, plistp:                      Public ordinary functions.
+                                                               (line 37)
+* Macro, defprop:                        Public macros.        (line  7)
+* Macro, unlessf:                        Public macros.        (line 14)
+* plist-keys:                            Public ordinary functions.
+                                                               (line 24)
+* plist-values:                          Public ordinary functions.
+                                                               (line 30)
+* plistp:                                Public ordinary functions.
+                                                               (line 36)
+* unlessf:                               Public macros.        (line 13)
 
 
 File: alexandria+.info,  Node: Variable index,  Next: Data type index,  Prev: Function index,  Up: Indexes
 
 A.3 Variables
 =============
-
- [index ]
-* Menu:
-
-* *assoc-test*:                          Internal special variables.
-                                                                (line 6)
-* Special Variable, *assoc-test*:        Internal special variables.
-                                                                (line 7)
 
 
 File: alexandria+.info,  Node: Data type index,  Prev: Variable index,  Up: Indexes
@@ -446,62 +445,84 @@ A.4 Data types
                                                                (line  6)
 * alexandria+ <1>:                       The alexandria+ package.
                                                                (line  6)
-* alist:                                 Exported types.       (line  6)
+* alexandria+.asd:                       The alexandria+/alexandria+․asd file.
+                                                               (line  6)
+* alist:                                 Public types.         (line  6)
+* control-flow.lisp:                     The alexandria+/control-flow․lisp file.
+                                                               (line  6)
+* File, alexandria+.asd:                 The alexandria+/alexandria+․asd file.
+                                                               (line  6)
+* File, control-flow.lisp:               The alexandria+/control-flow․lisp file.
+                                                               (line  6)
+* File, lists.lisp:                      The alexandria+/lists․lisp file.
+                                                               (line  6)
+* File, pkgdcl.lisp:                     The alexandria+/pkgdcl․lisp file.
+                                                               (line  6)
+* File, types.lisp:                      The alexandria+/types․lisp file.
+                                                               (line  6)
+* lists.lisp:                            The alexandria+/lists․lisp file.
+                                                               (line  6)
 * Package, alexandria+:                  The alexandria+ package.
                                                                (line  6)
-* percentage:                            Exported types.       (line 15)
-* plist:                                 Exported types.       (line 22)
-* probability:                           Exported types.       (line 31)
+* percentage:                            Public types.         (line 14)
+* pkgdcl.lisp:                           The alexandria+/pkgdcl․lisp file.
+                                                               (line  6)
+* plist:                                 Public types.         (line 20)
+* probability:                           Public types.         (line 28)
 * System, alexandria+:                   The alexandria+ system.
                                                                (line  6)
-* Type, alist:                           Exported types.       (line  7)
-* Type, percentage:                      Exported types.       (line 16)
-* Type, plist:                           Exported types.       (line 23)
-* Type, probability:                     Exported types.       (line 32)
+* Type, alist:                           Public types.         (line  7)
+* Type, percentage:                      Public types.         (line 15)
+* Type, plist:                           Public types.         (line 21)
+* Type, probability:                     Public types.         (line 29)
+* types.lisp:                            The alexandria+/types․lisp file.
+                                                               (line  6)
 
 
 
 Tag Table:
-Node: Top227
-Node: Systems652
-Node: The alexandria+ system858
-Ref: go to the alexandria+ system978
-Node: Files1700
-Node: Lisp files1914
-Node: The alexandria+․asd file2282
-Ref: go to the alexandria+․asd file2467
-Node: The alexandria+/pkgdcl․lisp file2573
-Ref: go to the alexandria+/pkgdcl․lisp file2797
-Node: The alexandria+/lists․lisp file2964
-Ref: go to the alexandria+/lists․lisp file3193
-Node: The alexandria+/types․lisp file4146
-Ref: go to the alexandria+/types․lisp file4332
-Node: Packages4639
-Node: The alexandria+ package4829
-Ref: go to the ALEXANDRIA+ package4952
-Node: Definitions6100
-Node: Exported definitions6372
-Node: Exported macros6617
-Ref: go to the ALEXANDRIA+∶∶DEFPROP macro6819
-Node: Exported functions7109
-Ref: go to the ALEXANDRIA+∶∶ALIST-KEYS function7300
-Ref: go to the ALEXANDRIA+∶∶ALIST-VALUES function7550
-Ref: go to the ALEXANDRIA+∶∶ALISTP function7796
-Ref: go to the ALEXANDRIA+∶∶CDR-ASSOC function8043
-Ref: go to the ALEXANDRIA+∶∶PLISTP function8298
-Node: Exported types8542
-Ref: go to the ALEXANDRIA+∶∶ALIST type8689
-Ref: go to the ALEXANDRIA+∶∶PERCENTAGE type9093
-Ref: go to the ALEXANDRIA+∶∶PLIST type9319
-Ref: go to the ALEXANDRIA+∶∶PROBABILITY type9724
-Node: Internal definitions9930
-Node: Internal special variables10124
-Ref: go to the ALEXANDRIA+∶∶*ASSOC-TEST* special variable10325
-Node: Indexes10537
-Node: Concept index10734
-Node: Function index12654
-Node: Variable index13689
-Node: Data type index14134
+Node: Top916
+Node: Copying2117
+Node: Systems2302
+Node: The alexandria+ system2512
+Ref: ❨1❩2632
+Node: Files3214
+Node: Lisp files3428
+Node: The alexandria+/alexandria+․asd file3731
+Ref: ❨2❩3952
+Node: The alexandria+/pkgdcl․lisp file4109
+Ref: ❨3❩4345
+Node: The alexandria+/lists․lisp file4498
+Ref: ❨4❩4727
+Node: The alexandria+/types․lisp file5294
+Ref: ❨5❩5529
+Node: The alexandria+/control-flow․lisp file5754
+Ref: ❨6❩5961
+Node: Packages6127
+Node: The alexandria+ package6317
+Ref: ❨7❩6440
+Node: Definitions7200
+Node: Public Interface7443
+Node: Public macros7650
+Ref: ❨12❩7851
+Ref: ❨8❩8107
+Node: Public ordinary functions8282
+Ref: ❨15❩8492
+Ref: ❨9❩8673
+Ref: ❨14❩8850
+Ref: ❨13❩9024
+Ref: ❨16❩9193
+Ref: ❨11❩9381
+Node: Public types9636
+Ref: ❨19❩9784
+Ref: ❨10❩10117
+Ref: ❨18❩10272
+Ref: ❨17❩10606
+Node: Indexes10741
+Node: Concept index10938
+Node: Function index11066
+Node: Variable index13209
+Node: Data type index13348
 
 End Tag Table
 
