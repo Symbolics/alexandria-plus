@@ -20,4 +20,7 @@
 	   #:defprop
 
 	   ;; Control Flow
-	   #:unlessf))
+	   #:unlessf
+
+	   ;; Numbers
+	   #:multf))

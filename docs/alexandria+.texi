@@ -4,7 +4,7 @@
 
 @c Copyright (C) 2019-2022 Steven Nunez
 
-@c This file is part of Alexandria+.
+@c This file is part of ALEXANDRIA+.
 
 @c This program is distributed under the terms of the Microsoft Public
 @c License.
@@ -13,7 +13,7 @@
 @c Commentary:
 
 @c Generated automatically by Declt version 4.0 beta 2 "William Riker"
-@c on Wed Jul 20 10:57:50 2022 GMT+8.
+@c on Wed Sep 07 13:32:46 2022 GMT+8.
 
 
 @c ====================================================================
@@ -21,7 +21,7 @@
 @c ====================================================================
 @c %**start of header
 @setfilename alexandria+.info
-@settitle The Alexandria+ Reference Manual
+@settitle The ALEXANDRIA+ Reference Manual
 @afourpaper
 @documentencoding UTF-8
 @c %**end of header
@@ -93,7 +93,7 @@
 @c ====================================================================
 @setchapternewpage odd
 @documentdescription
-The Alexandria+ Reference Manual, version 1.0.0.
+The ALEXANDRIA+ Reference Manual, version 1.1.0.
 @end documentdescription
 
 
@@ -213,9 +213,9 @@ The Alexandria+ Reference Manual, version 1.0.0.
 @c ====================================================================
 @c Info Category and Directory
 @c ====================================================================
-@dircategory Lisp-Stat
+@dircategory Common Lisp
 @direntry
-* Alexandria+ Reference Manual: (alexandria+). The Alexandria+ Reference Manual.
+* ALEXANDRIA+ Reference Manual: (alexandria+). The ALEXANDRIA+ Reference Manual.
 @end direntry
 
 
@@ -254,8 +254,8 @@ except that this permission notice may be translated as well.
 @c Title Page
 @c ====================================================================
 @titlepage
-@title The Alexandria+ Reference Manual
-@subtitle A conservative set of extensions to Alexandria utilities, version 1.0.0
+@title The ALEXANDRIA+ Reference Manual
+@subtitle A conservative set of extensions to Alexandria utilities, version 1.1.0
 
 @author Steven Nunez <@email{steve@atchar{}symbolics.tech}>
 
@@ -281,8 +281,8 @@ This manual was generated automatically by Declt 4.0b2.
 @c ====================================================================
 @ifnottex
 @node Top, Copying, (dir), (dir)
-@top The Alexandria+ Reference Manual
-This is the Alexandria+ Reference Manual, version 1.0.0,
+@top The ALEXANDRIA+ Reference Manual
+This is the ALEXANDRIA+ Reference Manual, version 1.1.0,
 generated automatically by Declt version 4.0b2.
 
 @menu
@@ -341,7 +341,7 @@ MS-PL
 @item Long Description
 Utilities not in Alexandria@comma{} UIOP or OSICAT.
 @item Version
-1.0.0
+1.1.0
 @item Dependency
 @t{alexandria}@: (system).
 @item Source
@@ -355,7 +355,9 @@ Utilities not in Alexandria@comma{} UIOP or OSICAT.
 @item
 @ref{❨5❩, , @t{types.lisp}}@: (file).
 @item
-@ref{❨6❩, , @t{control-flow.lisp}}@: (file).
+@ref{❨6❩, , @t{numbers.lisp}}@: (file).
+@item
+@ref{❨7❩, , @t{control-flow.lisp}}@: (file).
 @end itemize
 @end table
 
@@ -384,6 +386,7 @@ components trees.
 * The alexandria+/pkgdcl․lisp file::
 * The alexandria+/lists․lisp file::
 * The alexandria+/types․lisp file::
+* The alexandria+/numbers․lisp file::
 * The alexandria+/control-flow․lisp file::
 @end menu
 
@@ -410,7 +413,7 @@ components trees.
 @item Parent Component
 @ref{❨1❩, , @t{alexandria+}}@: (system).
 @item Packages
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @end table
 
 @node The alexandria+/lists․lisp file, The alexandria+/types․lisp file, The alexandria+/pkgdcl․lisp file, Lisp files
@@ -425,27 +428,27 @@ components trees.
 @item Public Interface
 @itemize @bullet
 @item
-@ref{❨19❩, , @t{alist}}@: (type).
+@ref{❨13❩, , @t{alist}}@: (type).
 @item
-@ref{❨15❩, , @t{alist-keys}}@: (function).
+@ref{❨11❩, , @t{alist-keys}}@: (function).
 @item
-@ref{❨9❩, , @t{alist-values}}@: (function).
+@ref{❨20❩, , @t{alist-values}}@: (function).
 @item
-@ref{❨14❩, , @t{alistp}}@: (function).
+@ref{❨12❩, , @t{alistp}}@: (function).
 @item
-@ref{❨12❩, , @t{defprop}}@: (macro).
+@ref{❨14❩, , @t{defprop}}@: (macro).
 @item
-@ref{❨18❩, , @t{plist}}@: (type).
+@ref{❨17❩, , @t{plist}}@: (type).
 @item
-@ref{❨13❩, , @t{plist-keys}}@: (function).
+@ref{❨16❩, , @t{plist-keys}}@: (function).
 @item
-@ref{❨16❩, , @t{plist-values}}@: (function).
+@ref{❨10❩, , @t{plist-values}}@: (function).
 @item
-@ref{❨11❩, , @t{plistp}}@: (function).
+@ref{❨18❩, , @t{plistp}}@: (function).
 @end itemize
 @end table
 
-@node The alexandria+/types․lisp file, The alexandria+/control-flow․lisp file, The alexandria+/lists․lisp file, Lisp files
+@node The alexandria+/types․lisp file, The alexandria+/numbers․lisp file, The alexandria+/lists․lisp file, Lisp files
 @subsection @t{alexandria+/types.lisp}
 @anchor{❨5❩}@c
 @fileindex{types.lisp}@c
@@ -457,15 +460,28 @@ components trees.
 @item Public Interface
 @itemize @bullet
 @item
-@ref{❨10❩, , @t{percentage}}@: (type).
+@ref{❨15❩, , @t{percentage}}@: (type).
 @item
-@ref{❨17❩, , @t{probability}}@: (type).
+@ref{❨9❩, , @t{probability}}@: (type).
 @end itemize
 @end table
 
-@node The alexandria+/control-flow․lisp file, , The alexandria+/types․lisp file, Lisp files
-@subsection @t{alexandria+/control-flow.lisp}
+@node The alexandria+/numbers․lisp file, The alexandria+/control-flow․lisp file, The alexandria+/types․lisp file, Lisp files
+@subsection @t{alexandria+/numbers.lisp}
 @anchor{❨6❩}@c
+@fileindex{numbers.lisp}@c
+@table @strong
+@item Source
+@ref{❨2❩, , @t{alexandria+.asd}}.
+@item Parent Component
+@ref{❨1❩, , @t{alexandria+}}@: (system).
+@item Public Interface
+@ref{❨19❩, , @t{multf}}@: (macro).
+@end table
+
+@node The alexandria+/control-flow․lisp file, , The alexandria+/numbers․lisp file, Lisp files
+@subsection @t{alexandria+/control-flow.lisp}
+@anchor{❨7❩}@c
 @fileindex{control-flow.lisp}@c
 @table @strong
 @item Source
@@ -473,7 +489,7 @@ components trees.
 @item Parent Component
 @ref{❨1❩, , @t{alexandria+}}@: (system).
 @item Public Interface
-@ref{❨8❩, , @t{unlessf}}@: (macro).
+@ref{❨21❩, , @t{unlessf}}@: (macro).
 @end table
 
 
@@ -495,7 +511,7 @@ Packages are listed by definition order.
 @c -----------------------
 @node The alexandria+ package, , Packages, Packages
 @section @t{alexandria+}
-@anchor{❨7❩}@c
+@anchor{❨8❩}@c
 @packageindex{alexandria+}@c
 @table @strong
 @item Source
@@ -512,34 +528,40 @@ Packages are listed by definition order.
 @item
 @t{data-frame}.
 @item
-@t{plot}.
+@t{num-utils.arithmetic}.
+@item
+@t{num-utils.quadrature}.
+@item
+@t{special-functions}.
 @end itemize
 @item Public Interface
 @itemize @bullet
 @item
-@ref{❨19❩, , @t{alist}}@: (type).
+@ref{❨13❩, , @t{alist}}@: (type).
 @item
-@ref{❨15❩, , @t{alist-keys}}@: (function).
+@ref{❨11❩, , @t{alist-keys}}@: (function).
 @item
-@ref{❨9❩, , @t{alist-values}}@: (function).
+@ref{❨20❩, , @t{alist-values}}@: (function).
 @item
-@ref{❨14❩, , @t{alistp}}@: (function).
+@ref{❨12❩, , @t{alistp}}@: (function).
 @item
-@ref{❨12❩, , @t{defprop}}@: (macro).
+@ref{❨14❩, , @t{defprop}}@: (macro).
 @item
-@ref{❨10❩, , @t{percentage}}@: (type).
+@ref{❨19❩, , @t{multf}}@: (macro).
 @item
-@ref{❨18❩, , @t{plist}}@: (type).
+@ref{❨15❩, , @t{percentage}}@: (type).
 @item
-@ref{❨13❩, , @t{plist-keys}}@: (function).
+@ref{❨17❩, , @t{plist}}@: (type).
 @item
-@ref{❨16❩, , @t{plist-values}}@: (function).
+@ref{❨16❩, , @t{plist-keys}}@: (function).
 @item
-@ref{❨11❩, , @t{plistp}}@: (function).
+@ref{❨10❩, , @t{plist-values}}@: (function).
 @item
-@ref{❨17❩, , @t{probability}}@: (type).
+@ref{❨18❩, , @t{plistp}}@: (function).
 @item
-@ref{❨8❩, , @t{unlessf}}@: (macro).
+@ref{❨9❩, , @t{probability}}@: (type).
+@item
+@ref{❨21❩, , @t{unlessf}}@: (macro).
 @end itemize
 @end table
 
@@ -572,94 +594,105 @@ lexicographic order.
 @node Public macros, Public ordinary functions, Public Interface, Public Interface
 @subsection Macros
 @deffn {Macro} {defprop} (symbol value indicator)
-@anchor{❨12❩}@c
+@anchor{❨14❩}@c
 @macrosubindex{defprop}@c
 Gives SYMBOL an INDICATOR property of VALUE.@*
 After this is done (CL:GET symbol indicator) returns VALUE
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deffn
+@deffn {Macro} {multf} (place coefficient)
+@anchor{❨19❩}@c
+@macrosubindex{multf}@c
+Multiply place by COEFFICIENT.
+@table @strong
+@item Package
+@ref{❨8❩, , @t{alexandria+}}.
+@item Source
+@ref{❨6❩, , @t{numbers.lisp}}.
+@end table
+@end deffn
 @deffn {Macro} {unlessf} (place value-form)
-@anchor{❨8❩}@c
+@anchor{❨21❩}@c
 @macrosubindex{unlessf}@c
 When PLACE is NIL@comma{} evaluate VALUE-FORM and save it there.
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
-@ref{❨6❩, , @t{control-flow.lisp}}.
+@ref{❨7❩, , @t{control-flow.lisp}}.
 @end table
 @end deffn
 
 @node Public ordinary functions, Public types, Public macros, Public Interface
 @subsection Ordinary functions
 @deffn {Function} {alist-keys} (alist)
-@anchor{❨15❩}@c
+@anchor{❨11❩}@c
 @functionsubindex{alist-keys}@c
 Returns a list of the keys in ALIST.
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deffn
 @deffn {Function} {alist-values} (alist)
-@anchor{❨9❩}@c
+@anchor{❨20❩}@c
 @functionsubindex{alist-values}@c
 Returns a list of the values in ALIST.
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deffn
 @deffn {Function} {alistp} (value)
-@anchor{❨14❩}@c
+@anchor{❨12❩}@c
 @functionsubindex{alistp}@c
 Returns T if VALUE is an ALIST.
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deffn
 @deffn {Function} {plist-keys} (plist)
-@anchor{❨13❩}@c
+@anchor{❨16❩}@c
 @functionsubindex{plist-keys}@c
 Return the keys of PLIST
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deffn
 @deffn {Function} {plist-values} (plist)
-@anchor{❨16❩}@c
+@anchor{❨10❩}@c
 @functionsubindex{plist-values}@c
 Return the values of PLIST
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deffn
 @deffn {Function} {plistp} (value &key allow-symbol-keys)
-@anchor{❨11❩}@c
+@anchor{❨18❩}@c
 @functionsubindex{plistp}@c
 Returns VALUE if it is a properly formed PLIST@comma{} NIL otherwise.@*
 If ALLOW-SYMBOL-KEYS is not nil@comma{} keys may be either symbols or keywords
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
@@ -668,45 +701,45 @@ If ALLOW-SYMBOL-KEYS is not nil@comma{} keys may be either symbols or keywords
 @node Public types, , Public ordinary functions, Public Interface
 @subsection Types
 @deftp {Type} {alist} ()
-@anchor{❨19❩}@c
+@anchor{❨13❩}@c
 @typesubindex{alist}@c
 Type designator for ALIST. Implemented as a SATISFIES type@comma{} hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deftp
 @deftp {Type} {percentage} ()
-@anchor{❨10❩}@c
+@anchor{❨15❩}@c
 @typesubindex{percentage}@c
 A number between 0 and 100
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨5❩, , @t{types.lisp}}.
 @end table
 @end deftp
 @deftp {Type} {plist} ()
-@anchor{❨18❩}@c
+@anchor{❨17❩}@c
 @typesubindex{plist}@c
 Type designator for PLIST. Implemented as a SATISFIES type@comma{} hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨4❩, , @t{lists.lisp}}.
 @end table
 @end deftp
 @deftp {Type} {probability} ()
-@anchor{❨17❩}@c
+@anchor{❨9❩}@c
 @typesubindex{probability}@c
 A number between 0 and 1
 @table @strong
 @item Package
-@ref{❨7❩, , @t{alexandria+}}.
+@ref{❨8❩, , @t{alexandria+}}.
 @item Source
 @ref{❨5❩, , @t{types.lisp}}.
 @end table

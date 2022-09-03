@@ -16,10 +16,10 @@ section entitled "Copying" is included exactly as in the original.
 Permission is granted to copy and distribute translations of this manual
 into another language, under the above conditions for modified versions,
 except that this permission notice may be translated as well. -->
-<title>The Alexandria+ Reference Manual</title>
+<title>The ALEXANDRIA+ Reference Manual</title>
 
-<meta name="description" content="The Alexandria+ Reference Manual, version 1.0.0.">
-<meta name="keywords" content="The Alexandria+ Reference Manual">
+<meta name="description" content="The ALEXANDRIA+ Reference Manual, version 1.1.0.">
+<meta name="keywords" content="The ALEXANDRIA+ Reference Manual">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -55,7 +55,7 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en">
-<h1 class="settitle" align="center">The Alexandria+ Reference Manual</h1>
+<h1 class="settitle" align="center">The ALEXANDRIA+ Reference Manual</h1>
 
 
 
@@ -102,8 +102,8 @@ ul.no-bullet {list-style: none}
 
 
 <div class="top" id="Top">
-<span id="The-Alexandria_002b-Reference-Manual"></span><h1 class="top">The Alexandria+ Reference Manual</h1>
-<p>This is the Alexandria+ Reference Manual, version 1.0.0,
+<span id="The-ALEXANDRIA_002b-Reference-Manual"></span><h1 class="top">The ALEXANDRIA+ Reference Manual</h1>
+<p>This is the ALEXANDRIA+ Reference Manual, version 1.1.0,
 generated automatically by Declt version 4.0b2.
 </p>
 
@@ -144,7 +144,8 @@ except that this permission notice may be translated as well.
       <li><a id="toc-alexandria_002b_002fpkgdcl_002elisp" href="#The-alexandria_002b_002fpkgdcl_2024lisp-file">2.1.2 <tt>alexandria+/pkgdcl.lisp</tt></a></li>
       <li><a id="toc-alexandria_002b_002flists_002elisp" href="#The-alexandria_002b_002flists_2024lisp-file">2.1.3 <tt>alexandria+/lists.lisp</tt></a></li>
       <li><a id="toc-alexandria_002b_002ftypes_002elisp" href="#The-alexandria_002b_002ftypes_2024lisp-file">2.1.4 <tt>alexandria+/types.lisp</tt></a></li>
-      <li><a id="toc-alexandria_002b_002fcontrol_002dflow_002elisp" href="#The-alexandria_002b_002fcontrol_002dflow_2024lisp-file">2.1.5 <tt>alexandria+/control-flow.lisp</tt></a></li>
+      <li><a id="toc-alexandria_002b_002fnumbers_002elisp" href="#The-alexandria_002b_002fnumbers_2024lisp-file">2.1.5 <tt>alexandria+/numbers.lisp</tt></a></li>
+      <li><a id="toc-alexandria_002b_002fcontrol_002dflow_002elisp" href="#The-alexandria_002b_002fcontrol_002dflow_2024lisp-file">2.1.6 <tt>alexandria+/control-flow.lisp</tt></a></li>
     </ul></li>
   </ul></li>
   <li><a id="toc-Packages-1" href="#Packages">3 Packages</a>
@@ -208,7 +209,7 @@ License.
 <dd><p>Utilities not in Alexandria, UIOP or OSICAT.
 </p></dd>
 <dt><span><strong>Version</strong></span></dt>
-<dd><p>1.0.0
+<dd><p>1.1.0
 </p></dd>
 <dt><span><strong>Dependency</strong></span></dt>
 <dd><p><tt>alexandria</tt> (system).
@@ -221,7 +222,8 @@ License.
 <li> <a href="#g_t_27683_2769"><tt>pkgdcl.lisp</tt></a> (file).
 </li><li> <a href="#g_t_27684_2769"><tt>lists.lisp</tt></a> (file).
 </li><li> <a href="#g_t_27685_2769"><tt>types.lisp</tt></a> (file).
-</li><li> <a href="#g_t_27686_2769"><tt>control-flow.lisp</tt></a> (file).
+</li><li> <a href="#g_t_27686_2769"><tt>numbers.lisp</tt></a> (file).
+</li><li> <a href="#g_t_27687_2769"><tt>control-flow.lisp</tt></a> (file).
 </li></ul>
 </dd>
 </dl>
@@ -273,7 +275,7 @@ components trees.
 <dd><p><a href="#g_t_27681_2769"><tt>alexandria+</tt></a> (system).
 </p></dd>
 <dt><span><strong>Packages</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 </dl>
 
@@ -292,15 +294,15 @@ components trees.
 </p></dd>
 <dt><span><strong>Public Interface</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_276819_2769"><tt>alist</tt></a> (type).
-</li><li> <a href="#g_t_276815_2769"><tt>alist-keys</tt></a> (function).
-</li><li> <a href="#g_t_27689_2769"><tt>alist-values</tt></a> (function).
-</li><li> <a href="#g_t_276814_2769"><tt>alistp</tt></a> (function).
-</li><li> <a href="#g_t_276812_2769"><tt>defprop</tt></a> (macro).
-</li><li> <a href="#g_t_276818_2769"><tt>plist</tt></a> (type).
-</li><li> <a href="#g_t_276813_2769"><tt>plist-keys</tt></a> (function).
-</li><li> <a href="#g_t_276816_2769"><tt>plist-values</tt></a> (function).
-</li><li> <a href="#g_t_276811_2769"><tt>plistp</tt></a> (function).
+<li> <a href="#g_t_276813_2769"><tt>alist</tt></a> (type).
+</li><li> <a href="#g_t_276811_2769"><tt>alist-keys</tt></a> (function).
+</li><li> <a href="#g_t_276820_2769"><tt>alist-values</tt></a> (function).
+</li><li> <a href="#g_t_276812_2769"><tt>alistp</tt></a> (function).
+</li><li> <a href="#g_t_276814_2769"><tt>defprop</tt></a> (macro).
+</li><li> <a href="#g_t_276817_2769"><tt>plist</tt></a> (type).
+</li><li> <a href="#g_t_276816_2769"><tt>plist-keys</tt></a> (function).
+</li><li> <a href="#g_t_276810_2769"><tt>plist-values</tt></a> (function).
+</li><li> <a href="#g_t_276818_2769"><tt>plistp</tt></a> (function).
 </li></ul>
 </dd>
 </dl>
@@ -320,17 +322,35 @@ components trees.
 </p></dd>
 <dt><span><strong>Public Interface</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_276810_2769"><tt>percentage</tt></a> (type).
-</li><li> <a href="#g_t_276817_2769"><tt>probability</tt></a> (type).
+<li> <a href="#g_t_276815_2769"><tt>percentage</tt></a> (type).
+</li><li> <a href="#g_t_27689_2769"><tt>probability</tt></a> (type).
 </li></ul>
 </dd>
 </dl>
 
 <hr>
 </div>
+<div class="subsection" id="The-alexandria_002b_002fnumbers_2024lisp-file">
+<span id="alexandria_002b_002fnumbers_002elisp"></span><h4 class="subsection">2.1.5 <tt>alexandria+/numbers.lisp</tt></h4>
+<span id="g_t_27686_2769"></span><span id="index-numbers_002elisp"></span>
+<span id="index-File_002c-numbers_002elisp"></span>
+<dl compact="compact">
+<dt><span><strong>Source</strong></span></dt>
+<dd><p><a href="#g_t_27682_2769"><tt>alexandria+.asd</tt></a>.
+</p></dd>
+<dt><span><strong>Parent Component</strong></span></dt>
+<dd><p><a href="#g_t_27681_2769"><tt>alexandria+</tt></a> (system).
+</p></dd>
+<dt><span><strong>Public Interface</strong></span></dt>
+<dd><p><a href="#g_t_276819_2769"><tt>multf</tt></a> (macro).
+</p></dd>
+</dl>
+
+<hr>
+</div>
 <div class="subsection" id="The-alexandria_002b_002fcontrol_002dflow_2024lisp-file">
-<span id="alexandria_002b_002fcontrol_002dflow_002elisp"></span><h4 class="subsection">2.1.5 <tt>alexandria+/control-flow.lisp</tt></h4>
-<span id="g_t_27686_2769"></span><span id="index-control_002dflow_002elisp"></span>
+<span id="alexandria_002b_002fcontrol_002dflow_002elisp"></span><h4 class="subsection">2.1.6 <tt>alexandria+/control-flow.lisp</tt></h4>
+<span id="g_t_27687_2769"></span><span id="index-control_002dflow_002elisp"></span>
 <span id="index-File_002c-control_002dflow_002elisp"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
@@ -340,7 +360,7 @@ components trees.
 <dd><p><a href="#g_t_27681_2769"><tt>alexandria+</tt></a> (system).
 </p></dd>
 <dt><span><strong>Public Interface</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>unlessf</tt></a> (macro).
+<dd><p><a href="#g_t_276821_2769"><tt>unlessf</tt></a> (macro).
 </p></dd>
 </dl>
 
@@ -359,7 +379,7 @@ components trees.
 <hr>
 <div class="section" id="The-alexandria_002b-package">
 <span id="alexandria_002b-1"></span><h3 class="section">3.1 <tt>alexandria+</tt></h3>
-<span id="g_t_27687_2769"></span><span id="index-alexandria_002b-1"></span>
+<span id="g_t_27688_2769"></span><span id="index-alexandria_002b-1"></span>
 <span id="index-Package_002c-alexandria_002b"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
@@ -374,23 +394,26 @@ components trees.
 <dt><span><strong>Used By List</strong></span></dt>
 <dd><ul>
 <li> <tt>data-frame</tt>.
-</li><li> <tt>plot</tt>.
+</li><li> <tt>num-utils.arithmetic</tt>.
+</li><li> <tt>num-utils.quadrature</tt>.
+</li><li> <tt>special-functions</tt>.
 </li></ul>
 </dd>
 <dt><span><strong>Public Interface</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_276819_2769"><tt>alist</tt></a> (type).
-</li><li> <a href="#g_t_276815_2769"><tt>alist-keys</tt></a> (function).
-</li><li> <a href="#g_t_27689_2769"><tt>alist-values</tt></a> (function).
-</li><li> <a href="#g_t_276814_2769"><tt>alistp</tt></a> (function).
-</li><li> <a href="#g_t_276812_2769"><tt>defprop</tt></a> (macro).
-</li><li> <a href="#g_t_276810_2769"><tt>percentage</tt></a> (type).
-</li><li> <a href="#g_t_276818_2769"><tt>plist</tt></a> (type).
-</li><li> <a href="#g_t_276813_2769"><tt>plist-keys</tt></a> (function).
-</li><li> <a href="#g_t_276816_2769"><tt>plist-values</tt></a> (function).
-</li><li> <a href="#g_t_276811_2769"><tt>plistp</tt></a> (function).
-</li><li> <a href="#g_t_276817_2769"><tt>probability</tt></a> (type).
-</li><li> <a href="#g_t_27688_2769"><tt>unlessf</tt></a> (macro).
+<li> <a href="#g_t_276813_2769"><tt>alist</tt></a> (type).
+</li><li> <a href="#g_t_276811_2769"><tt>alist-keys</tt></a> (function).
+</li><li> <a href="#g_t_276820_2769"><tt>alist-values</tt></a> (function).
+</li><li> <a href="#g_t_276812_2769"><tt>alistp</tt></a> (function).
+</li><li> <a href="#g_t_276814_2769"><tt>defprop</tt></a> (macro).
+</li><li> <a href="#g_t_276819_2769"><tt>multf</tt></a> (macro).
+</li><li> <a href="#g_t_276815_2769"><tt>percentage</tt></a> (type).
+</li><li> <a href="#g_t_276817_2769"><tt>plist</tt></a> (type).
+</li><li> <a href="#g_t_276816_2769"><tt>plist-keys</tt></a> (function).
+</li><li> <a href="#g_t_276810_2769"><tt>plist-values</tt></a> (function).
+</li><li> <a href="#g_t_276818_2769"><tt>plistp</tt></a> (function).
+</li><li> <a href="#g_t_27689_2769"><tt>probability</tt></a> (type).
+</li><li> <a href="#g_t_276821_2769"><tt>unlessf</tt></a> (macro).
 </li></ul>
 </dd>
 </dl>
@@ -416,12 +439,12 @@ lexicographic order.
 <span id="Macros"></span><h4 class="subsection">4.1.1 Macros</h4>
 <dl class="def">
 <dt id="index-defprop"><span class="category">Macro: </span><span><strong>defprop</strong> <em>(symbol value indicator)</em><a href='#index-defprop' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276812_2769"></span><span id="index-Macro_002c-defprop"></span>
+<dd><span id="g_t_276814_2769"></span><span id="index-Macro_002c-defprop"></span>
 <p>Gives SYMBOL an INDICATOR property of VALUE.<br>
 After this is done (CL:GET symbol indicator) returns VALUE
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -429,15 +452,28 @@ After this is done (CL:GET symbol indicator) returns VALUE
 </dl>
 </dd></dl>
 <dl class="def">
+<dt id="index-multf"><span class="category">Macro: </span><span><strong>multf</strong> <em>(place coefficient)</em><a href='#index-multf' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="g_t_276819_2769"></span><span id="index-Macro_002c-multf"></span>
+<p>Multiply place by COEFFICIENT.
+</p><dl compact="compact">
+<dt><span><strong>Package</strong></span></dt>
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
+</p></dd>
+<dt><span><strong>Source</strong></span></dt>
+<dd><p><a href="#g_t_27686_2769"><tt>numbers.lisp</tt></a>.
+</p></dd>
+</dl>
+</dd></dl>
+<dl class="def">
 <dt id="index-unlessf"><span class="category">Macro: </span><span><strong>unlessf</strong> <em>(place value-form)</em><a href='#index-unlessf' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_27688_2769"></span><span id="index-Macro_002c-unlessf"></span>
+<dd><span id="g_t_276821_2769"></span><span id="index-Macro_002c-unlessf"></span>
 <p>When PLACE is NIL, evaluate VALUE-FORM and save it there.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27686_2769"><tt>control-flow.lisp</tt></a>.
+<dd><p><a href="#g_t_27687_2769"><tt>control-flow.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
@@ -448,11 +484,11 @@ After this is done (CL:GET symbol indicator) returns VALUE
 <span id="Ordinary-functions"></span><h4 class="subsection">4.1.2 Ordinary functions</h4>
 <dl class="def">
 <dt id="index-alist_002dkeys"><span class="category">Function: </span><span><strong>alist-keys</strong> <em>(alist)</em><a href='#index-alist_002dkeys' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276815_2769"></span><span id="index-Function_002c-alist_002dkeys"></span>
+<dd><span id="g_t_276811_2769"></span><span id="index-Function_002c-alist_002dkeys"></span>
 <p>Returns a list of the keys in ALIST.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -461,11 +497,11 @@ After this is done (CL:GET symbol indicator) returns VALUE
 </dd></dl>
 <dl class="def">
 <dt id="index-alist_002dvalues"><span class="category">Function: </span><span><strong>alist-values</strong> <em>(alist)</em><a href='#index-alist_002dvalues' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_27689_2769"></span><span id="index-Function_002c-alist_002dvalues"></span>
+<dd><span id="g_t_276820_2769"></span><span id="index-Function_002c-alist_002dvalues"></span>
 <p>Returns a list of the values in ALIST.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -474,11 +510,11 @@ After this is done (CL:GET symbol indicator) returns VALUE
 </dd></dl>
 <dl class="def">
 <dt id="index-alistp"><span class="category">Function: </span><span><strong>alistp</strong> <em>(value)</em><a href='#index-alistp' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276814_2769"></span><span id="index-Function_002c-alistp"></span>
+<dd><span id="g_t_276812_2769"></span><span id="index-Function_002c-alistp"></span>
 <p>Returns T if VALUE is an ALIST.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -487,11 +523,11 @@ After this is done (CL:GET symbol indicator) returns VALUE
 </dd></dl>
 <dl class="def">
 <dt id="index-plist_002dkeys"><span class="category">Function: </span><span><strong>plist-keys</strong> <em>(plist)</em><a href='#index-plist_002dkeys' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276813_2769"></span><span id="index-Function_002c-plist_002dkeys"></span>
+<dd><span id="g_t_276816_2769"></span><span id="index-Function_002c-plist_002dkeys"></span>
 <p>Return the keys of PLIST
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -500,11 +536,11 @@ After this is done (CL:GET symbol indicator) returns VALUE
 </dd></dl>
 <dl class="def">
 <dt id="index-plist_002dvalues"><span class="category">Function: </span><span><strong>plist-values</strong> <em>(plist)</em><a href='#index-plist_002dvalues' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276816_2769"></span><span id="index-Function_002c-plist_002dvalues"></span>
+<dd><span id="g_t_276810_2769"></span><span id="index-Function_002c-plist_002dvalues"></span>
 <p>Return the values of PLIST
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -513,12 +549,12 @@ After this is done (CL:GET symbol indicator) returns VALUE
 </dd></dl>
 <dl class="def">
 <dt id="index-plistp"><span class="category">Function: </span><span><strong>plistp</strong> <em>(value &amp;key allow-symbol-keys)</em><a href='#index-plistp' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276811_2769"></span><span id="index-Function_002c-plistp"></span>
+<dd><span id="g_t_276818_2769"></span><span id="index-Function_002c-plistp"></span>
 <p>Returns VALUE if it is a properly formed PLIST, NIL otherwise.<br>
 If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -532,11 +568,11 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 <span id="Types"></span><h4 class="subsection">4.1.3 Types</h4>
 <dl class="def">
 <dt id="index-alist"><span class="category">Type: </span><span><strong>alist</strong> <em>()</em><a href='#index-alist' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276819_2769"></span><span id="index-Type_002c-alist"></span>
+<dd><span id="g_t_276813_2769"></span><span id="index-Type_002c-alist"></span>
 <p>Type designator for ALIST. Implemented as a SATISFIES type, hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -545,11 +581,11 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 </dd></dl>
 <dl class="def">
 <dt id="index-percentage"><span class="category">Type: </span><span><strong>percentage</strong> <em>()</em><a href='#index-percentage' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276810_2769"></span><span id="index-Type_002c-percentage"></span>
+<dd><span id="g_t_276815_2769"></span><span id="index-Type_002c-percentage"></span>
 <p>A number between 0 and 100
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27685_2769"><tt>types.lisp</tt></a>.
@@ -558,11 +594,11 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 </dd></dl>
 <dl class="def">
 <dt id="index-plist"><span class="category">Type: </span><span><strong>plist</strong> <em>()</em><a href='#index-plist' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276818_2769"></span><span id="index-Type_002c-plist"></span>
+<dd><span id="g_t_276817_2769"></span><span id="index-Type_002c-plist"></span>
 <p>Type designator for PLIST. Implemented as a SATISFIES type, hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27684_2769"><tt>lists.lisp</tt></a>.
@@ -571,11 +607,11 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 </dd></dl>
 <dl class="def">
 <dt id="index-probability"><span class="category">Type: </span><span><strong>probability</strong> <em>()</em><a href='#index-probability' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276817_2769"></span><span id="index-Type_002c-probability"></span>
+<dd><span id="g_t_27689_2769"></span><span id="index-Type_002c-probability"></span>
 <p>A number between 0 and 1
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_27687_2769"><tt>alexandria+</tt></a>.
+<dd><p><a href="#g_t_27688_2769"><tt>alexandria+</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
 <dd><p><a href="#g_t_27685_2769"><tt>types.lisp</tt></a>.
@@ -637,7 +673,9 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-M">M</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Macro_002c-defprop"><code><span class="roman">Macro, </span>defprop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-macros">Public macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Macro_002c-multf"><code><span class="roman">Macro, </span>multf</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-macros">Public macros</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Macro_002c-unlessf"><code><span class="roman">Macro, </span>unlessf</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-macros">Public macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-multf"><code>multf</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-macros">Public macros</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-plist_002dkeys"><code>plist-keys</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
@@ -683,6 +721,8 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-L"><b>L</b></a>
  &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-N"><b>N</b></a>
+ &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-S"><b>S</b></a>
@@ -706,11 +746,15 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 <tr><td></td><td valign="top"><a href="#index-File_002c-alexandria_002b_002easd"><code>File, <tt>alexandria+.asd</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002falexandria_002b_2024asd-file">The alexandria+/alexandria+․asd file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-control_002dflow_002elisp"><code>File, <tt>control-flow.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002fcontrol_002dflow_2024lisp-file">The alexandria+/control-flow․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-lists_002elisp"><code>File, <tt>lists.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002flists_2024lisp-file">The alexandria+/lists․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-numbers_002elisp"><code>File, <tt>numbers.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002fnumbers_2024lisp-file">The alexandria+/numbers․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-pkgdcl_002elisp"><code>File, <tt>pkgdcl.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002fpkgdcl_2024lisp-file">The alexandria+/pkgdcl․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-types_002elisp"><code>File, <tt>types.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002ftypes_2024lisp-file">The alexandria+/types․lisp file</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-L">L</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-lists_002elisp"><code><tt>lists.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002flists_2024lisp-file">The alexandria+/lists․lisp file</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Data-type-index_tp_letter-N">N</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-numbers_002elisp"><code><tt>numbers.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b_002fnumbers_2024lisp-file">The alexandria+/numbers․lisp file</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Package_002c-alexandria_002b"><code><span class="roman">Package, </span>alexandria+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-alexandria_002b-package">The alexandria+ package</a></td></tr>
@@ -737,6 +781,8 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords
 <a class="summary-letter" href="#Data-type-index_tp_letter-F"><b>F</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-N"><b>N</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
  &nbsp; 

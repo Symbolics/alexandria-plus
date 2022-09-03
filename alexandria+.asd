@@ -7,11 +7,12 @@
   :author "Steven Nunez <steve@symbolics.tech>"
   :homepage "https://github.com/symbolics/alexandria+"
   :license :MS-PL
-  :version "1.0.0"
+  :version "1.1.0"
   :depends-on ("alexandria")
   :components ((:file "pkgdcl")
 	       (:file "lists")
 	       (:file "types")
+	       (:file "numbers")
 	       (:file "control-flow"))
   :in-order-to ((test-op (test-op :alexandria+/tests))))
 
