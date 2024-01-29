@@ -89,3 +89,17 @@
     (assert-equal 'bar (unlessf val 'bar))
     (assert-false (unlessf val 'baz))))
 
+
+(defsuite numbers (alexandria+))
+
+(deftest multf (numbers)
+  (let ((val 12))
+    (assert-equal 24 (multf val 2))	;test return
+    (assert-equal 24 val 2)))		;test setf
+
+(deftest divf (numbers)
+  (let ((val 12))
+    (assert-equal 6 (divf val 2))
+    (assert-equal 6 val)))
+
+
