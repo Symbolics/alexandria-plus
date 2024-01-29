@@ -8,13 +8,14 @@
   :author "Steven Nunez <steve@symbolics.tech>"
   :homepage "https://github.com/symbolics/alexandria+"
   :license :MS-PL
-  :version "1.1.1"
+  :version "1.2.0"
   :depends-on ("alexandria")
   :components ((:file "pkgdcl")
 	       (:file "lists")
 	       (:file "types")
 	       (:file "numbers")
-	       (:file "control-flow"))
+	       (:file "control-flow")
+	       (:file "sets"))
   :in-order-to ((test-op (test-op :alexandria+/tests))))
 
 (defsystem "alexandria+/tests"
@@ -29,4 +30,4 @@
 		      (symbol-call :clunit :run-suite
 				   (find-symbol* :alexandria+ ;test suite
 						 :alexandria+/tests) ;package
-					   :use-debugger nil))))
+				   :use-debugger nil))))

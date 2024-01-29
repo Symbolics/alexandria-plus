@@ -7,6 +7,7 @@
 
 (defsuite lists (alexandria+))
 
+
 
 (defsuite alist (lists))
 
@@ -80,7 +81,6 @@
   (assert-false (typep -1 'percentage)))
 
 
-
 
 (defsuite control-flow (alexandria+))
 
@@ -88,6 +88,7 @@
   (let (val)
     (assert-equal 'bar (unlessf val 'bar))
     (assert-false (unlessf val 'baz))))
+
 
 
 (defsuite numbers (alexandria+))
@@ -102,4 +103,19 @@
     (assert-equal 6 (divf val 2))
     (assert-equal 6 val)))
 
+
+
+(defsuite sets (alexandria+))
+
+(defsuite difference (sets))
+
+(deftest list (difference)
+  (let ((seq1 '(1 2 3 4 5 6))
+	(seq2 '(6 7 8 9 10)))
+    (assert-equal '(1 2 3 4 5) (set-difference* seq1 seq2))))
+
+(deftest vector (difference)
+  (let ((seq1 #(1 2 3 4 5 6))
+	(seq2 #(6 7 8 9 10)))
+    (assert-equalp #(1 2 3 4 5) (set-difference* seq1 seq2))))
 

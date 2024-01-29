@@ -25,4 +25,7 @@
 
 	   ;; Numbers
 	   #:multf
-	   #:divf))
+	   #:divf
+
+           ;; Sets
+           #:set-difference*))
