@@ -1,35 +1,22 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ALEXANDRIA+/TESTS -*-
-;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; SPDX-License-identifier: MS-PL
+(in-package #:alexandria+/tests)
 
-(in-package :alexandria+/tests)
+(defsuite alexandria+ ())
 
-(defun run-tests (&key (report 'parachute:plain) (test 'all))
-    (let ((*package* #.*package*))
-      (parachute:test (etypecase test
-                        (symbol test)
-                        (string (find-symbol test *package*)))
-                      :report report)))
-
-(define-test all)
-
-(define-test lists
-  :parent all)
-
+(defsuite lists (alexandria+))
 
 
-;;; alist
+(defsuite alist (lists))
 
-(define-test alist
-  :parent lists)
-
-(define-test alistp
-  :parent alist
-  (true (alistp '()))
-  (true (alistp '(("foo" . "bar"))))
-  (true (alistp '(("foo" . "bar") ("baz" . "qux"))))
-  (false (alistp '(:foo)))
-  (false (alistp 5))
-  (false (alistp (cons "foo" "bar"))))
+(deftest alistp (alist)
+  (assert-true (alistp '()))
+  (assert-true (alistp '(("foo" . "bar"))))
+  (assert-true (alistp '(("foo" . "bar") ("baz" . "qux"))))
+  (assert-false (alistp '(:foo)))
+  (assert-false (alistp 5))
+  (assert-false (alistp (cons "foo" "bar"))))
 
 #+nil
 (define-test cdr-assoc
@@ -39,80 +26,66 @@
   (is equal nil (cdr-assoc nil '(("foo" . "bar"))))
   (is equal "bar" (cdr-assoc "foo" '(("foo" . "bar")))))
 
-(define-test alist-keys
-  :parent alist
-  (is equal '("foo" "baz") (alist-keys '(("foo" . "bar") ("baz" . "qux")))))
+(deftest keys (alist)
+  (assert-equal '("foo" "baz") (alist-keys '(("foo" . "bar") ("baz" . "qux")))))
 
-(define-test alist-values
-  :parent alist
-  (is equal '("bar" "qux") (alist-values '(("foo" . "bar") ("baz" . "qux")))))
-
+(deftest values (alist)
+  (assert-equal '("bar" "qux") (alist-values '(("foo" . "bar") ("baz" . "qux")))))
 
 
 
-;;; plist
+(defsuite plist (lists))
 
-(define-test plist
-  :parent lists)
+(deftest plistp (plist)
+  (assert-true (plistp '(:foo :bar)))
+  (assert-true (plistp '(:foo "bar")))
+  (assert-false (plistp ()))
+  (assert-false (plistp '("foo" "bar")))
+  (assert-false (plistp '(foo bar)))
+  (assert-true (plistp '(foo bar) :allow-symbol-keys t)))
 
-(define-test plistp
-  :parent plist
-  (true (plistp '(:foo :bar)))
-  (true (plistp '(:foo "bar")))
-  (false (plistp ()))
-  (false (plistp '("foo" "bar")))
-  (false (plistp '(foo bar)))
-  (true (plistp '(foo bar) :allow-symbol-keys t)))
-
-(define-test defprop
-  :parent plist
+(deftest defprop (plist)
   (let (test-prop)
     (declare (ignore test-prop))
     (defprop test-prop hk pistol)
-    (is equal 'hk (get 'test-prop 'pistol))))
+    (assert-equal 'hk (get 'test-prop 'pistol))))
 
-(define-test plist-keys
-  :parent plist
+(deftest keys (plist)
   (let ((result (plist-keys '(:a 1 :b 2 :c 3))))
-    (true (and (subsetp '(:a :b :c) result)
-	       (subsetp result '(:a :b :c))))))
+    (assert-true (and (subsetp '(:a :b :c) result)
+		      (subsetp result '(:a :b :c))))))
 
-(define-test plist-values
-  :parent plist
+(deftest values (plist)
   (let ((result (plist-values '(:a 1 :b 2 :c 3))))
-    (true (and (subsetp '(1 2 3) result)
-	       (subsetp result '(1 2 3))))))
+    (assert-true (and (subsetp '(1 2 3) result)
+		      (subsetp result '(1 2 3))))))
+
+
 
 
-;;; types
+(defsuite types (alexandria+))
 
-(define-test types
-  :parent all)
+(deftest probability (types)
+  (assert-true (typep 0.1 'probability))
+  (assert-true (typep 0 'probability))
+  (assert-true (typep 1 'probability))
+  (assert-false (typep 1.1 'probability))
+  (assert-false (typep -1 'probability)))
 
-(define-test probability
-  :parent types
-  (true (typep 0.1 'probability))
-  (true (typep 0 'probability))
-  (true (typep 1 'probability))
-  (false (typep 1.1 'probability))
-  (false (typep -1 'probability)))
+(deftest percentage (types)
+  (assert-true (typep 97 'percentage))
+  (assert-true (typep 0 'percentage))
+  (assert-true (typep 100 'percentage))
+  (assert-false (typep 101 'percentage))
+  (assert-false (typep -1 'percentage)))
 
-(define-test percentage
-  :parent types
-  (true (typep 97 'percentage))
-  (true (typep 0 'percentage))
-  (true (typep 100 'percentage))
-  (false (typep 101 'percentage))
-  (false (typep -1 'percentage)))
+
 
 
-;;; control-flow
+(defsuite control-flow (alexandria+))
 
-(define-test control-flow
-  :parent all)
-
-(define-test unlessf
-  :parent control-flow
+(deftest unlessf (control-flow)
   (let (val)
-    (is equal 'bar (unlessf val 'bar))
-    (false (unlessf val 'baz))))
+    (assert-equal 'bar (unlessf val 'bar))
+    (assert-false (unlessf val 'baz))))
+

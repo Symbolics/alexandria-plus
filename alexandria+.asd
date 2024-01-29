@@ -1,5 +1,6 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ASDF -*-
-;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; SPDX-License-identifier: MS-PL
 
 (defsystem "alexandria+"
   :description "A conservative set of extensions to Alexandria utilities."
@@ -7,7 +8,7 @@
   :author "Steven Nunez <steve@symbolics.tech>"
   :homepage "https://github.com/symbolics/alexandria+"
   :license :MS-PL
-  :version "1.1.0"
+  :version "1.1.1"
   :depends-on ("alexandria")
   :components ((:file "pkgdcl")
 	       (:file "lists")
@@ -19,8 +20,13 @@
 (defsystem "alexandria+/tests"
   :description "Unit tests for the ALEXANDRIA+ library."
   :license :MS-PL
-  :depends-on ("alexandria+" "parachute")
+  :depends-on ("alexandria+" "clunit2")
   :pathname "tests/"
   :components ((:file "pkgdcl")
 	       (:file "tests"))
-  :perform (test-op (o c) (symbol-call :alexandria+/tests :run-tests)))
+  :perform (test-op (o s)
+		    (let ((*print-pretty* t)) ;work around clunit issue #9
+		      (symbol-call :clunit :run-suite
+				   (find-symbol* :alexandria+ ;test suite
+						 :alexandria+/tests) ;package
+					   :use-debugger nil))))
