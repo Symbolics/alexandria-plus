@@ -8,7 +8,7 @@
   :author "Steven Nunez <steve@symbolics.tech>"
   :homepage "https://github.com/symbolics/alexandria+"
   :license :MS-PL
-  :version "1.2.0"
+  :version "1.2.1"
   :depends-on ("alexandria")
   :components ((:file "pkgdcl")
 	       (:file "lists")

@@ -65,6 +65,7 @@
 
 Returns:
     If sequences are lists, then a list is returned.  If vectors, a vector is returned."
+  ;; Do they really need to be of the same type?
   (unless (equalp (class-of seq1) (class-of seq2)) ;type-of is too specific
     (error "SEQ1 and SEQ2 must both be of the same type."))
   (when (and testp notp)
@@ -79,11 +80,8 @@ Returns:
       (if (not (with-set-keys (position (funcall key value) seq2)))
           (vector-push value res)))
     (typecase seq1
-      (array res)
+      (vector res)
       (cons (coerce res 'list)))))
-
-
-
 
 
 ;;; This doesn't require the doseq macro.  CCL doesn't have a
