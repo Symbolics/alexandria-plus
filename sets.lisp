@@ -1,5 +1,5 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ALEXANDRIA+ -*-
-;;; Copyright (c) 2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2024-2025 by Symbolics Pte. Ltd. All rights reserved.
 ;;; SPDX-License-identifier: MS-PL
 (in-package #:alexandria+)
 
@@ -14,7 +14,7 @@
 ;;; Use this with the following keyword args to your set function:
 ;;;  (&key (key #'identity) (test #'eql testp) (test-not nil notp))
 
-(eval-when (eval compile #-bccl load)
+(eval-when (:compile-toplevel :load-toplevel :execute)
  (defmacro with-set-keys (funcall)
    `(cond (notp ,(append funcall '(:key key :test-not test-not)))
           (t ,(append funcall '(:key key :test test))))))
