@@ -119,3 +119,38 @@
 	(seq2 #(6 7 8 9 10)))
     (assert-equalp #(1 2 3 4 5) (set-difference* seq1 seq2))))
 
+
+(defsuite definitions (alexandria+))
+
+(deftest defprop (definitions)
+  (let (test-prop)
+    (declare (ignore test-prop))
+    (defprop test-prop hk pistol)
+    (assert-equal 'hk (get 'test-prop 'pistol))))
+
+;; Define some functions to alias
+(declaim (ftype function new-add new-greet alias-add alias-temp))
+(defun original-add (a b) (+ a b))
+(defun original-greet () "Hello")
+
+(deftest test-basic-alias (definitions)
+  "Verify that the alias calls the correct function."
+  (defalias new-add original-add)
+  (assert-equal 5 (new-add 2 3))
+  (assert-equal "Hello" (let () (defalias new-greet original-greet) (new-greet))))
+
+(deftest test-function-identity (definitions)
+  "Verify the alias points to the exact same function object."
+  (defalias alias-add original-add)
+  (assert-true (eq (symbol-function 'alias-add)
+                   (symbol-function 'original-add))))
+
+(deftest test-redefinition-behavior (definitions)
+  "Verify that if the original is redefined, the alias still points to the OLD version."
+  (defun temp-func () :old)
+  (defalias alias-temp temp-func)
+  (defun temp-func () :new) ; Redefine original
+  (assert-equal :old (alias-temp)) ; Alias remains linked to the old function object
+  (assert-equal :new (temp-func)))
+
+

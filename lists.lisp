@@ -62,13 +62,6 @@ If ALLOW-SYMBOL-KEYS is not nil, keys may be either symbols or keywords"
   "Type designator for PLIST. Implemented as a SATISFIES type, hence not recommended for performance intensive use. Main usefullness as a type designator of the expected type in a TYPE-ERROR."
   '(satisfies plistp))
 
-(defmacro defprop (symbol value indicator)
-  "Gives SYMBOL an INDICATOR property of VALUE.
-After this is done (CL:GET symbol indicator) returns VALUE"
-  (when (not (symbolp symbol))
-    (error "~S is not a symbol" symbol))
-  `(setf (get ',symbol ',indicator) ',value))
-
 (defun plist-keys (plist)
   "Return the keys of PLIST"
   (when (not (plistp plist))

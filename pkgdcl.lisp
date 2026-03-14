@@ -1,5 +1,5 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: CL-USER -*-
-;;; Copyright (c) 2021-2024 Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2024,2026 Symbolics Pte. Ltd. All rights reserved.
 ;;; SPDX-License-identifier: MS-PL
 
 (uiop:define-package #:alexandria+
@@ -17,8 +17,9 @@
 	   #:probability
 	   #:percentage
 
-	   ;; Utilities
+	   ;; Definitions
 	   #:defprop
+	   #:defalias
 
 	   ;; Control Flow
 	   #:unlessf

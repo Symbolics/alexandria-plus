@@ -1,5 +1,5 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ASDF -*-
-;;; Copyright (c) 2021-2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2024,2026 by Symbolics Pte. Ltd. All rights reserved.
 ;;; SPDX-License-identifier: MS-PL
 
 (defsystem "alexandria+"
@@ -8,12 +8,13 @@
   :author "Steven Nunez <steve@symbolics.tech>"
   :homepage "https://github.com/symbolics/alexandria+"
   :license :MS-PL
-  :version "1.2.1"
+  :version "1.2.2"
   :depends-on ("alexandria")
   :components ((:file "pkgdcl")
 	       (:file "lists")
 	       (:file "types")
 	       (:file "numbers")
+	       (:file "definitions")
 	       (:file "control-flow")
 	       (:file "sets"))
   :in-order-to ((test-op (test-op :alexandria+/tests))))
