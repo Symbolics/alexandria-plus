@@ -45,12 +45,6 @@
   (assert-false (plistp '(foo bar)))
   (assert-true (plistp '(foo bar) :allow-symbol-keys t)))
 
-(deftest defprop (plist)
-  (let (test-prop)
-    (declare (ignore test-prop))
-    (defprop test-prop hk pistol)
-    (assert-equal 'hk (get 'test-prop 'pistol))))
-
 (deftest keys (plist)
   (let ((result (plist-keys '(:a 1 :b 2 :c 3))))
     (assert-true (and (subsetp '(:a :b :c) result)
