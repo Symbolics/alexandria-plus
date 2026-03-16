@@ -1,5 +1,5 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ALEXANDRIA+/TESTS -*-
-;;; Copyright (c) 2021-2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2024, 2026 by Symbolics Pte. Ltd. All rights reserved.
 ;;; SPDX-License-identifier: MS-PL
 (in-package #:alexandria+/tests)
 
@@ -148,3 +148,94 @@
   (assert-equal :new (temp-func)))
 
 
+
+(defsuite sequences (alexandria+))
+
+(defsuite delete-nth (sequences))
+
+
+;;; delete-nth
+
+(deftest delete-nth-list-middle (delete-nth)
+  "Remove an element from the middle of a list."
+  (assert-equal '(a c d) (delete-nth '(a b c d) 1)))
+
+(deftest delete-nth-list-first (delete-nth)
+  "Remove the first element of a list."
+  (assert-equal '(b c d) (delete-nth '(a b c d) 0)))
+
+(deftest delete-nth-list-last (delete-nth)
+  "Remove the last element of a list."
+  (assert-equal '(a b c) (delete-nth '(a b c d) 3)))
+
+(deftest delete-nth-list-singleton (delete-nth)
+  "Removing the only element of a list yields NIL."
+  (assert-equal '() (delete-nth '(x) 0)))
+
+(deftest delete-nth-vector-middle (delete-nth)
+  "Remove an element from the middle of a vector."
+  (assert-equalp #(a c d) (delete-nth #(a b c d) 1)))
+
+(deftest delete-nth-vector-first (delete-nth)
+  "Remove the first element of a vector."
+  (assert-equalp #(b c d) (delete-nth #(a b c d) 0)))
+
+(deftest delete-nth-vector-last (delete-nth)
+  "Remove the last element of a vector."
+  (assert-equalp #(a b c) (delete-nth #(a b c d) 3)))
+
+(deftest delete-nth-vector-singleton (delete-nth)
+  "Removing the only element of a vector yields an empty vector."
+  (assert-equalp #() (delete-nth #(x) 0)))
+
+(deftest delete-nth-returns-sequence (delete-nth)
+  "Return value is always a sequence."
+  (assert-true (typep (delete-nth '(1 2 3) 0) 'sequence))
+  (assert-true (typep (delete-nth #(1 2 3) 0) 'sequence)))
+
+(deftest delete-nth-type-error (delete-nth)
+  "Non-sequence argument signals a type error."
+  (assert-condition type-error (delete-nth 42 0)))
+
+
+;;; delete-nth* (modify macro — test both return value and place mutation)
+
+(deftest delete-nth*-list-return (delete-nth)
+  "delete-nth* returns the modified list."
+  (let ((v (list 'a 'b 'c 'd)))
+    (assert-equal '(a c d) (delete-nth* v 1))))
+
+(deftest delete-nth*-list-mutates (delete-nth)
+  "delete-nth* updates the binding via SETF."
+  (let ((v (list 'a 'b 'c 'd)))
+    (delete-nth* v 1)
+    (assert-equal '(a c d) v)))
+
+(deftest delete-nth*-vector-return (delete-nth)
+  "delete-nth* returns the modified vector."
+  (let ((v (vector 'a 'b 'c 'd)))
+    (assert-equalp #(a c d) (delete-nth* v 1))))
+
+(deftest delete-nth*-vector-mutates (delete-nth)
+  "delete-nth* updates the binding via SETF."
+  (let ((v (vector 'a 'b 'c 'd)))
+    (delete-nth* v 1)
+    (assert-equalp #(a c d) v)))
+
+(deftest delete-nth*-first (delete-nth)
+  "delete-nth* correctly removes the first element."
+  (let ((v (list 'a 'b 'c)))
+    (delete-nth* v 0)
+    (assert-equal '(b c) v)))
+
+(deftest delete-nth*-last (delete-nth)
+  "delete-nth* correctly removes the last element."
+  (let ((v (list 'a 'b 'c)))
+    (delete-nth* v 2)
+    (assert-equal '(a b) v)))
+
+(deftest delete-nth*-singleton (delete-nth)
+  "delete-nth* on a single-element list yields NIL."
+  (let ((v (list 'x)))
+    (delete-nth* v 0)
+    (assert-equal '() v)))

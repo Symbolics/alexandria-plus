@@ -29,4 +29,8 @@
 	   #:divf
 
            ;; Sets
-           #:set-difference*))
+           #:set-difference*
+
+           ;; Sequences
+	   #:delete-nth
+	   #:delete-nth*))
